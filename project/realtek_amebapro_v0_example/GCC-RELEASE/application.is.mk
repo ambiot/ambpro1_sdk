@@ -616,8 +616,8 @@ SRC_C += ../../../component/common/example/example_entry.c
 SRC_C += ../../../component/common/example/wlan_fast_connect/example_wlan_fast_connect.c
 SRC_C += ../../../component/common/example/kvs_webrtc/Common.c
 SRC_C += ../../../component/common/example/kvs_webrtc/example_kvs_webrtc.c
-SRC_C += ../../../component/common/example/kvs_producer/kvs_producer.c
-SRC_C += ../../../component/common/example/kvs_producer/example_kvs_producer.c
+SRC_C += ../../../lib_amazon/amazon-kinesis-video-streams-producer-embedded-c/samples/kvs-amebapro/kvs_producer.c
+SRC_C += ../../../lib_amazon/amazon-kinesis-video-streams-producer-embedded-c/samples/kvs-amebapro/example_kvs_producer.c
 SRC_C += ../../../lib_amazon/amazon-freertos-202012.00/vendors/realtek/boards/amebaPro/aws_demos/application_code/aws_main.c
 SRC_C += ../../../component/common/example/amazon_freertos/example_amazon_freertos.c
 

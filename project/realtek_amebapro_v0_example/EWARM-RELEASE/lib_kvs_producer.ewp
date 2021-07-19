@@ -2203,9 +2203,6 @@
             <name>$PROJ_DIR$\..\..\..\lib_amazon\amazon-kinesis-video-streams-producer-embedded-c\src\source\json_helper.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\lib_amazon\iar_port\kvs_port_freertos.c</name>
-        </file>
-        <file>
             <name>$PROJ_DIR$\..\..\..\lib_amazon\amazon-kinesis-video-streams-producer-embedded-c\src\source\mkv_generator.c</name>
         </file>
         <file>
@@ -2213,6 +2210,9 @@
         </file>
         <file>
             <name>$PROJ_DIR$\..\..\..\lib_amazon\amazon-kinesis-video-streams-producer-embedded-c\src\source\netio.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\lib_amazon\amazon-kinesis-video-streams-producer-embedded-c\src\port\port_amebapro.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\..\..\..\lib_amazon\amazon-kinesis-video-streams-producer-embedded-c\src\source\restapi.c</name>

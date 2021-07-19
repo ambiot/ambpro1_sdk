@@ -4121,10 +4121,10 @@
             <group>
                 <name>kvs_producer</name>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\component\common\example\kvs_producer\example_kvs_producer.c</name>
+                    <name>$PROJ_DIR$\..\..\..\lib_amazon\amazon-kinesis-video-streams-producer-embedded-c\samples\kvs-amebapro\example_kvs_producer.c</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\component\common\example\kvs_producer\kvs_producer.c</name>
+                    <name>$PROJ_DIR$\..\..\..\lib_amazon\amazon-kinesis-video-streams-producer-embedded-c\samples\kvs-amebapro\kvs_producer.c</name>
                 </file>
                 <configuration>
                     <name>Debug</name>

@@ -298,7 +298,7 @@
 #endif
 
 #if CONFIG_EXAMPLE_KVS_PRODUCER
-#include <kvs_producer/example_kvs_producer.h>
+#include <../../../lib_amazon/amazon-kinesis-video-streams-producer-embedded-c/samples/kvs-amebapro/example_kvs_producer.h>
 #endif
 
 #if CONFIG_EXAMPLE_AUDIO_OPUS_ENCODE
