@@ -40,7 +40,7 @@ Amazon FreeRTOS-LTS libraries are supported on AmebaPro now, it can be used to c
     <td width=50%><img src="doc/photo/face_detection.jpg" valign="middle" alt="test image size" height=233px width=400px/></td>
     <td align=Left width=50%>
       1. Stream live video from AmebaPro to KVS<BR><BR>2. AI face detection by using AWS Rekognition API<BR><BR>&nbsp; :point_right: &nbsp;
-      <a href="https://github.com/ambiot/ambpro1_sdk.git">
+      <a href="https://github.com/ambiot/ambpro1_sdk/blob/main/doc/AmebaPro_Amazon_KVS_Producer_Getting_Started_Guide_v1.1_r.pdf">
         <img src="https://img.shields.io/badge/-Getting%20Started-green" valign="middle" height=25px width=120px/>
       </a>
     </td>
@@ -54,7 +54,7 @@ Amazon FreeRTOS-LTS libraries are supported on AmebaPro now, it can be used to c
     <td width=50%><img src="doc/photo/p2p.jpg" valign="middle" alt="test image size" height=206px width=400px/></td>
     <td align=Left width=50%>
       1. AmebaPro start a signaling channel, as a master<BR><BR>2. Browser run as a viewer (client)<BR><BR>3. Start a P2P connection<BR><BR>&nbsp; :point_right: &nbsp;
-      <a href="https://github.com/ambiot/ambpro1_sdk.git">
+      <a href="https://github.com/ambiot/ambpro1_sdk/blob/main/doc/AmebaPro_Amazon_KVS_WebRTC_Getting_Started_Guide_v1.1_r.pdf">
         <img src="https://img.shields.io/badge/-Getting%20Started-green" valign="middle" height=25px width=120px/>
       </a>
     </td>
@@ -68,7 +68,7 @@ Amazon FreeRTOS-LTS libraries are supported on AmebaPro now, it can be used to c
     <td width=50%><img src="doc/photo/object_detection.jpg" valign="middle" alt="test image size" height=225px width=400px/></td>
     <td align=Left width=50%>
       1. Take a snapshot by camera sensor<BR><BR>2. Upload image from AmebaPro to S3<BR><BR>3. Trigger Lambda function to do object detection<BR><BR>&nbsp; :point_right: &nbsp;
-      <a href="https://github.com/ambiot/ambpro1_sdk.git">
+      <a href="https://github.com/ambiot/ambpro1_sdk/blob/main/doc/AmebaPro_AWS_S3+Rekognition_Getting_Started_Guide_v1.2_r.pdf">
         <img src="https://img.shields.io/badge/-Getting%20Started-green" valign="middle" height=25px width=120px/>
       </a>
       <BR><BR>Notes: Based on FreeRTOS-v202012-LTS framework
@@ -78,7 +78,7 @@ Amazon FreeRTOS-LTS libraries are supported on AmebaPro now, it can be used to c
       
 ### :bulb: FreeRTOS-LTS-v202012.00 Libraries
 &nbsp; AmebaPro can connect to AWS IoT with the long term support libraries maintained by Amazon.
-<a href="https://github.com/ambiot/ambpro1_sdk.git">
+<a href="https://github.com/ambiot/ambpro1_sdk/blob/main/doc/AmebaPro_Amazon_FreeRTOS-LTS_Getting_Started_Guide_v1.2_r.pdf">
   <img src="https://img.shields.io/badge/-Getting%20Started-green" valign="middle" height=25px width=120px/>
 </a>  
 &nbsp; [FreeRTOS demos](https://docs.aws.amazon.com/freertos/latest/userguide/freertos-next-steps.html): coreHTTP, coreMQTT, Over-the-air updates(OTA), AWS IoT Device Shadow...  
@@ -86,7 +86,7 @@ Amazon FreeRTOS-LTS libraries are supported on AmebaPro now, it can be used to c
 ## Demo code  
 :pencil2: **KVS WebRTC** &nbsp; &nbsp;`project/component/common/example/kvs_webrtc`  
 
-:pencil2: **KVS Producer** &nbsp; &nbsp;`project/component/common/example/kvs_producer`  
+:pencil2: **KVS Producer** &nbsp; &nbsp;`lib_amazon/amazon-kinesis-video-streams-producer-embedded-c/samples/kvs-amebapro`  
 
 :pencil2: **S3 file upload** &nbsp; &nbsp;`project/component/common/application/amazon/JPEG_snapshot_s3_upload_example`  
 
