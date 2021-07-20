@@ -26,11 +26,11 @@ ifeq ($(findstring Linux, $(OS)), Linux)
 endif
 .PHONY: ram_is
 ram_is: toolchain
-	# @$(MAKE) -f lib_webrtc_pic.mk all
-	# @$(MAKE) -f lib_webrtc_producer_c.mk all
-	# @$(MAKE) -f libsrtp2.mk all
-	# @$(MAKE) -f libwebsockets.mk all
-	# @$(MAKE) -f lib_kvs_webrtc.mk all
+	@$(MAKE) -f lib_webrtc_pic.mk all
+	@$(MAKE) -f lib_webrtc_producer_c.mk all
+	@$(MAKE) -f libsrtp2.mk all
+	@$(MAKE) -f libwebsockets.mk all
+	@$(MAKE) -f lib_kvs_webrtc.mk all
 	@$(MAKE) -f lib_kvs_producer.mk all
 	@$(MAKE) -f lib_amazon_LTS.mk all
 	rm -f ../../../component/soc/realtek/8195b/app/shell/cmd_shell.o ../../../component/soc/realtek/8195b/app/shell/cmd_shell.o ../../../component/soc/realtek/8195b/app/shell/cmd_shell.su
@@ -38,13 +38,13 @@ ram_is: toolchain
 
 .PHONY: kvs_lib
 kvs_lib:
-	# @$(MAKE) -f lib_webrtc_pic.mk all
-	# @$(MAKE) -f lib_webrtc_producer_c.mk all
-	# @$(MAKE) -f libsrtp2.mk all
-	# @$(MAKE) -f libwebsockets.mk all
-	# @$(MAKE) -f lib_kvs_webrtc.mk all
-	@$(MAKE) -f lib_kvs_producer.mk all
-	@$(MAKE) -f lib_amazon_LTS.mk all
+	@$(MAKE) -f lib_webrtc_pic.mk all -j4
+	@$(MAKE) -f lib_webrtc_producer_c.mk all -j4
+	@$(MAKE) -f libsrtp2.mk all -j4
+	@$(MAKE) -f libwebsockets.mk all -j4
+	@$(MAKE) -f lib_kvs_webrtc.mk all -j4
+	@$(MAKE) -f lib_kvs_producer.mk all -j4
+	@$(MAKE) -f lib_amazon_LTS.mk all -j4
 
 .PHONY: ram_mp
 ram_mp: toolchain
@@ -59,12 +59,12 @@ ram_lp: toolchain
 clean:
 	@$(MAKE) -f application.lp.mk clean
 	@$(MAKE) -f application.is.mk clean
-	# @$(MAKE) -f lib_webrtc_pic.mk clean
-	# @$(MAKE) -f lib_webrtc_producer_c.mk clean
-	# @$(MAKE) -f libsrtp2.mk clean
-	# @$(MAKE) -f libwebsockets.mk clean
+	@$(MAKE) -f lib_webrtc_pic.mk clean
+	@$(MAKE) -f lib_webrtc_producer_c.mk clean
+	@$(MAKE) -f libsrtp2.mk clean
+	@$(MAKE) -f libwebsockets.mk clean
 	@$(MAKE) -f lib_kvs_producer.mk clean
-	# @$(MAKE) -f lib_kvs_webrtc.mk clean
+	@$(MAKE) -f lib_kvs_webrtc.mk clean
 	@$(MAKE) -f lib_amazon_LTS.mk clean
 
 .PHONY: clean_lp
