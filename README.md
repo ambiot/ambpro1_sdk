@@ -4,7 +4,7 @@ This project is going to demonstrate how to use KVS Producer and WebRTC on Ameba
   <img src="https://img.shields.io/badge/Realtek%20IoT-AmebaPro-blue" valign="middle" alt="test image size" height="15%" width="15%"/>
 </a>  
 
-Amazon FreeRTOS-LTS libraries are supported on AmebaPro now, it can be used to communicate with AWS IoT core easily!  
+Amazon FreeRTOS-LTS libraries are supported on AmebaPro now, it can be used to communicate with AWS IoT core easily!
 [Version 202012.00](https://github.com/aws/amazon-freertos/tree/202012.00)
 
 ## Brief Introduction to Amazon KVS and FreeRTOS-LTS  
