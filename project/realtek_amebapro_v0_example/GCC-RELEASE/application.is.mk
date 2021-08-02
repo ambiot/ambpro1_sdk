@@ -776,7 +776,7 @@ LFLAGS += -Wl,-wrap,access    -Wl,-wrap,stat
 LIBFLAGS =
 LIBFLAGS += ../../../component/soc/realtek/8195b/fwlib/hal-rtl8195b-hp/lib/lib/hal_pmc_hs.a
 LIBFLAGS += -L../../../component/soc/realtek/8195b/misc/bsp/lib/common/GCC/
-all: LIBFLAGS += -l_codec -l_faac -l_h264 -l_mmf -l_soc_is -l_wlan -l_fatfs_r014
+all: LIBFLAGS += -l_codec -l_faac -l_h264 -l_mmf -l_soc_is -l_wlan -l_filesystem -l_sdcard
 mp: LIBFLAGS += -l_codec -l_dct -l_faac -l_h264 -l_haac -l_http -l_mmf -l_muxer -l_p2p -l_rtsp -l_sdcard -l_soc_is -l_speex -l_usbd -l_wlan_mp -l_wps -l_qr_code -l_mdns -l_tftp
 all: LIBFLAGS += -l_kvs_webrtc -l_webrtc_producer_c -l_webrtc_pic -lsrtp2 -lwebsockets -l_kvs_producer -l_amazon_LTS
 
