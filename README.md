@@ -84,7 +84,7 @@ Amazon FreeRTOS-LTS libraries are supported on AmebaPro now, it can be used to c
 &nbsp; [FreeRTOS demos](https://docs.aws.amazon.com/freertos/latest/userguide/freertos-next-steps.html): coreHTTP, coreMQTT, Over-the-air updates(OTA), AWS IoT Device Shadow...  
 
 ## Demo code  
-:pencil2: **KVS WebRTC** &nbsp; &nbsp;`project/component/common/example/kvs_webrtc`  
+:pencil2: **KVS WebRTC** &nbsp; &nbsp;`lib_amazon/amazon-kinesis-video-streams-webrtc-sdk-c-for-freertos/main_amebapro`  
 
 :pencil2: **KVS Producer** &nbsp; &nbsp;`lib_amazon/amazon-kinesis-video-streams-producer-embedded-c/samples/kvs-amebapro`  
 

@@ -292,9 +292,9 @@
 #if CONFIG_EXAMPLE_SD_HOT_PLUG
 #include <sd_hot_plug/example_sd_hotplug.h>
 #endif
-   
+
 #if CONFIG_EXAMPLE_KVS_WEBRTC
-#include <kvs_webrtc/example_kvs_webrtc.h>
+#include <../../../lib_amazon/amazon-kinesis-video-streams-webrtc-sdk-c-for-freertos/main_amebapro/example_kvs_webrtc.h>
 #endif
 
 #if CONFIG_EXAMPLE_KVS_PRODUCER
