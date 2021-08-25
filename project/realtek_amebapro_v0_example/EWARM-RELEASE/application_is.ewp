@@ -3090,6 +3090,9 @@
         <file>
             <name>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\misc\bsp\lib\common\IAR\lib_wlan.a</name>
         </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\misc\bsp\lib\common\IAR\lib_wps.a</name>
+        </file>
     </group>
     <group>
         <name>multimedia</name>

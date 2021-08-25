@@ -177,7 +177,7 @@
  *
  * Enable this layer to allow use of alternative memory allocators.
  */
-//#define MBEDTLS_PLATFORM_MEMORY
+#define MBEDTLS_PLATFORM_MEMORY
 
 /**
  * \def MBEDTLS_PLATFORM_NO_STD_FUNCTIONS
@@ -2699,7 +2699,7 @@
  *
  * This module enables abstraction of common (libc) functions.
  */
-//#define MBEDTLS_PLATFORM_C
+#define MBEDTLS_PLATFORM_C
 
 /**
  * \def MBEDTLS_POLY1305_C

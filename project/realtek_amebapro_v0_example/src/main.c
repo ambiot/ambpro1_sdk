@@ -4,6 +4,7 @@
 #include "main.h"
 #include <example_entry.h>
 #include "platform_autoconf.h"
+#include "platform_stdlib.h"
 
 extern void console_init(void);
 
@@ -29,6 +30,9 @@ void main(void)
 	wlan_network();
 #endif
 #endif
+
+    mbedtls_platform_set_calloc_free( (void*(*)( size_t ))calloc, vPortFree);
+
 	/* Execute application example */
 	example_entry();
 
