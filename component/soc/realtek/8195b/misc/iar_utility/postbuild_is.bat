@@ -23,8 +23,9 @@ if not exist %cfgdir%\Exe\bootloader.out (
 
 ::update key.json
 %tooldir%\elf2bin.exe keygen keycfg.json > postbuild_is_log.txt
-%tooldir%\elf2bin.exe convert amebapro_bootloader.json PARTITIONTABLE >> postbuild_is_log.txt
-%tooldir%\elf2bin.exe convert amebapro_firmware_is.json FIRMWARE >> postbuild_is_log.txt
+%tooldir%\elf2bin.exe convert amebapro_bootloader.json PARTITIONTABLE secure_bit=0 >> postbuild_is_log.txt
+%tooldir%\elf2bin.exe convert amebapro_bootloader.json BOOTLOADER secure_bit=0 >> postbuild_is_log.txt
+%tooldir%\elf2bin.exe convert amebapro_firmware_is.json FIRMWARE secure_bit=0 >> postbuild_is_log.txt
 %tooldir%\checksum.exe Debug\Exe\firmware_is.bin
 %tooldir%\elf2bin.exe combine Debug/Exe/flash_is.bin PTAB=Debug\Exe\partition.bin,BOOT=Debug\Exe\boot.bin,FW1=Debug\Exe\firmware_is.bin >> postbuild_is_log.txt
 

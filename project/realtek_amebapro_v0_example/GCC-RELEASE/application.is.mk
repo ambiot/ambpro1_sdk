@@ -57,6 +57,7 @@ TARGET=application_is
 OBJ_DIR=$(TARGET)/Debug/obj
 BIN_DIR=$(TARGET)/Debug/bin
 INFO_DIR=$(TARGET)/Debug/info
+BOOT_BIN_DIR=bootloader/Debug/bin
 
 ROMIMG = 
 
@@ -822,8 +823,11 @@ manipulate_images:	| application
 	@echo ===========================================================
 	cp  ../../../component/soc/realtek/8195b/misc/bsp/image/boot.bin application_is/boot.bin
 	$(ELF2BIN) keygen keycfg.json
-	$(ELF2BIN) convert amebapro_bootloader.json PARTITIONTABLE
-	$(ELF2BIN) convert amebapro_firmware_is.json FIRMWARE
+	$(ELF2BIN) convert amebapro_bootloader.json PARTITIONTABLE secure_bit=0
+	$(ELF2BIN) convert amebapro_firmware_is.json FIRMWARE secure_bit=0
+	cp ../../../component/soc/realtek/8195b/misc/bsp/image/bootloader.axf $(BOOT_BIN_DIR)/bootloader.axf
+	$(ELF2BIN) convert amebapro_bootloader.json BOOTLOADER secure_bit=0
+	cp bootloader/boot.bin application_is/boot.bin
 	$(ELF2BIN) combine application_is/flash_is.bin PTAB=partition.bin,BOOT=application_is/boot.bin,FW1=application_is/firmware_is.bin
 	$(CHKSUM) application_is/firmware_is.bin
 	$(FLASH_TOOLDIR)/postbuild.sh $(ELF2BIN)
@@ -860,6 +864,7 @@ prerequirement:
 	mkdir -p $(OBJ_DIR)
 	mkdir -p $(BIN_DIR)
 	mkdir -p $(INFO_DIR)
+	mkdir -p $(BOOT_BIN_DIR)
 	
 $(ASM_O): %.o : %.S
 	#$(AS) -march=armv8-m.main+dsp -mthumb -mfloat-abi=softfp -mfpu=fpv5-sp-d16 -g $< -o $@
