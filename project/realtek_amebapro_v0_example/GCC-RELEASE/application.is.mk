@@ -78,9 +78,8 @@ INCLUDES += -I../../../component/soc/realtek/8195b/app/rtl_printf/include
 INCLUDES += -I../../../component/soc/realtek/8195b/app/shell
 INCLUDES += -I../../../component/soc/realtek/8195b/app/stdio_port
 INCLUDES += -I../../../component/os/freertos
-INCLUDES += -I../../../component/os/freertos/freertos_v10.0.0/include
-INCLUDES += -I../../../component/os/freertos/freertos_v10.0.0/portable/GCC/ARM_RTL8195B
-INCLUDES += -I../../../component/os/freertos/freertos_v10.0.0/secure
+INCLUDES += -I../../../component/os/freertos/freertos_v10.4.3/include
+INCLUDES += -I../../../component/os/freertos/freertos_v10.4.3_port/GCC/ARM_CM33_NTZ/non_secure
 INCLUDES += -I../../../component/os/os_dep/include
 INCLUDES += -I../../../component/soc/realtek/8195b/misc/utilities/include
 INCLUDES += -I../../../component/soc/realtek/8195b/misc/platform
@@ -182,10 +181,10 @@ INCLUDES += -I../../../component/common/application/qr_code_scanner/src/zbar/qrc
 #INCLUDES += -I../../../component/common/audio/AEC/WebrtcAEC
 #INCLUDES += -I../../../component/common/audio/AEC/WebrtcAEC/utility
 #INCLUDES += -I../../../component/common/audio/AEC/WebrtcAEC/include
-INCLUDES += -I../../../component/os/freertos/freertos_v10.0.0/portable/posix/lib/include
-INCLUDES += -I../../../component/os/freertos/freertos_v10.0.0/portable/posix/lib/FreeRTOS-Plus-POSIX/include/portable/realtek/rtl8195
-INCLUDES += -I../../../component/os/freertos/freertos_v10.0.0/portable/posix/lib/FreeRTOS-Plus-POSIX/include
-INCLUDES += -I../../../component/os/freertos/freertos_v10.0.0/portable/posix/lib/include/private
+INCLUDES += -I../../../component/os/freertos/posix/lib/include
+INCLUDES += -I../../../component/os/freertos/posix/lib/FreeRTOS-Plus-POSIX/include/portable/realtek/rtl8195
+INCLUDES += -I../../../component/os/freertos/posix/lib/FreeRTOS-Plus-POSIX/include
+INCLUDES += -I../../../component/os/freertos/posix/lib/include/private
 INCLUDES += -I../../../lib_amazon/amazon-kinesis-video-streams-pic/src/client/include
 INCLUDES += -I../../../lib_amazon/amazon-kinesis-video-streams-pic/src/common/include
 INCLUDES += -I../../../lib_amazon/amazon-kinesis-video-streams-pic/src/heap/include
@@ -285,6 +284,9 @@ INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/device_sha
 INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/coreJSON/source/include
 INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/demos/common/mqtt_demo_helpers
 INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/freertos_plus/aws/ota/test
+INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/jobs_for_aws/source/include
+INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/device_defender_for_aws/source/include
+INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/demos/device_defender_for_aws
 
 
 # Source file list
@@ -534,28 +536,29 @@ SRC_C += ../../../component/common/drivers/wlan/realtek/src/core/option/rtw_opt_
 #os
 #freertos
 #portable
-##SRC_C += ../../../component/os/freertos/freertos_v10.0.0/portable/MemMang/heap_4.c
+##SRC_C += ../../../component/os/freertos/freertos_v10.4.3/portable/MemMang/heap_4.c
+ITCM_C += ../../../component/os/freertos/freertos_v10.4.3_port/GCC/ARM_CM33_NTZ/non_secure/port.c
+ITCM_C += ../../../component/os/freertos/freertos_v10.4.3_port/GCC/ARM_CM33_NTZ/non_secure/portasm.c
 ##Debug
-ITCM_C += ../../../component/os/freertos/freertos_v10.0.0/portable/GCC/ARM_RTL8195B/port.c
-ITCM_C += ../../../component/os/freertos/freertos_v10.0.0/croutine.c
-ITCM_C += ../../../component/os/freertos/freertos_v10.0.0/event_groups.c
-ITCM_C += ../../../component/os/freertos/freertos_v10.0.0/list.c
-ITCM_C += ../../../component/os/freertos/freertos_v10.0.0/queue.c
-ITCM_C += ../../../component/os/freertos/freertos_v10.0.0/stream_buffer.c
-ITCM_C += ../../../component/os/freertos/freertos_v10.0.0/tasks.c
-ITCM_C += ../../../component/os/freertos/freertos_v10.0.0/timers.c
+ITCM_C += ../../../component/os/freertos/freertos_v10.4.3/croutine.c
+ITCM_C += ../../../component/os/freertos/freertos_v10.4.3/event_groups.c
+ITCM_C += ../../../component/os/freertos/freertos_v10.4.3/list.c
+ITCM_C += ../../../component/os/freertos/freertos_v10.4.3/queue.c
+ITCM_C += ../../../component/os/freertos/freertos_v10.4.3/stream_buffer.c
+ITCM_C += ../../../component/os/freertos/freertos_v10.4.3/tasks.c
+ITCM_C += ../../../component/os/freertos/freertos_v10.4.3/timers.c
 #posix
-ITCM_C += ../../../component/os/freertos/freertos_v10.0.0/portable/posix/lib/FreeRTOS-Plus-POSIX/source/FreeRTOS_POSIX_clock.c
-ITCM_C += ../../../component/os/freertos/freertos_v10.0.0/portable/posix/lib/FreeRTOS-Plus-POSIX/source/FreeRTOS_POSIX_mqueue.c
-ITCM_C += ../../../component/os/freertos/freertos_v10.0.0/portable/posix/lib/FreeRTOS-Plus-POSIX/source/FreeRTOS_POSIX_pthread.c
-ITCM_C += ../../../component/os/freertos/freertos_v10.0.0/portable/posix/lib/FreeRTOS-Plus-POSIX/source/FreeRTOS_POSIX_pthread_barrier.c
-ITCM_C += ../../../component/os/freertos/freertos_v10.0.0/portable/posix/lib/FreeRTOS-Plus-POSIX/source/FreeRTOS_POSIX_pthread_cond.c
-ITCM_C += ../../../component/os/freertos/freertos_v10.0.0/portable/posix/lib/FreeRTOS-Plus-POSIX/source/FreeRTOS_POSIX_pthread_mutex.c
-ITCM_C += ../../../component/os/freertos/freertos_v10.0.0/portable/posix/lib/FreeRTOS-Plus-POSIX/source/FreeRTOS_POSIX_sched.c
-ITCM_C += ../../../component/os/freertos/freertos_v10.0.0/portable/posix/lib/FreeRTOS-Plus-POSIX/source/FreeRTOS_POSIX_semaphore.c
-ITCM_C += ../../../component/os/freertos/freertos_v10.0.0/portable/posix/lib/FreeRTOS-Plus-POSIX/source/FreeRTOS_POSIX_timer.c
-ITCM_C += ../../../component/os/freertos/freertos_v10.0.0/portable/posix/lib/FreeRTOS-Plus-POSIX/source/FreeRTOS_POSIX_unistd.c
-ITCM_C += ../../../component/os/freertos/freertos_v10.0.0/portable/posix/lib/FreeRTOS-Plus-POSIX/source/FreeRTOS_POSIX_utils.c
+ITCM_C += ../../../component/os/freertos/posix/lib/FreeRTOS-Plus-POSIX/source/FreeRTOS_POSIX_clock.c
+ITCM_C += ../../../component/os/freertos/posix/lib/FreeRTOS-Plus-POSIX/source/FreeRTOS_POSIX_mqueue.c
+ITCM_C += ../../../component/os/freertos/posix/lib/FreeRTOS-Plus-POSIX/source/FreeRTOS_POSIX_pthread.c
+ITCM_C += ../../../component/os/freertos/posix/lib/FreeRTOS-Plus-POSIX/source/FreeRTOS_POSIX_pthread_barrier.c
+ITCM_C += ../../../component/os/freertos/posix/lib/FreeRTOS-Plus-POSIX/source/FreeRTOS_POSIX_pthread_cond.c
+ITCM_C += ../../../component/os/freertos/posix/lib/FreeRTOS-Plus-POSIX/source/FreeRTOS_POSIX_pthread_mutex.c
+ITCM_C += ../../../component/os/freertos/posix/lib/FreeRTOS-Plus-POSIX/source/FreeRTOS_POSIX_sched.c
+ITCM_C += ../../../component/os/freertos/posix/lib/FreeRTOS-Plus-POSIX/source/FreeRTOS_POSIX_semaphore.c
+ITCM_C += ../../../component/os/freertos/posix/lib/FreeRTOS-Plus-POSIX/source/FreeRTOS_POSIX_timer.c
+ITCM_C += ../../../component/os/freertos/posix/lib/FreeRTOS-Plus-POSIX/source/FreeRTOS_POSIX_unistd.c
+ITCM_C += ../../../component/os/freertos/posix/lib/FreeRTOS-Plus-POSIX/source/FreeRTOS_POSIX_utils.c
 SRC_C += ../../../component/os/freertos/cmsis_os.c
 SRC_C += ../../../component/os/os_dep/device_lock.c
 SRC_C += ../../../component/os/freertos/freertos_cb.c
@@ -641,6 +644,12 @@ SRC_C += ../../../lib_amazon/amazon-freertos-202012.00/demos/demo_runner/iot_dem
 SRC_C += ../../../lib_amazon/amazon-freertos-202012.00/demos/dev_mode_key_provisioning/src/aws_dev_mode_key_provisioning.c
 #device_shadow_for_aws
 SRC_C += ../../../lib_amazon/amazon-freertos-202012.00/demos/device_shadow_for_aws/shadow_demo_main.c
+#device_defender_for_aws
+SRC_C += ../../../lib_amazon/amazon-freertos-202012.00/demos/device_defender_for_aws/metrics_collector/lwip/metrics_collector.c
+SRC_C += ../../../lib_amazon/amazon-freertos-202012.00/demos/device_defender_for_aws/defender_demo.c
+SRC_C += ../../../lib_amazon/amazon-freertos-202012.00/demos/device_defender_for_aws/report_builder.c
+#jobs_for_aws
+SRC_C += ../../../lib_amazon/amazon-freertos-202012.00/demos/jobs_for_aws/jobs_demo.c
 #network_manager
 SRC_C += ../../../lib_amazon/amazon-freertos-202012.00/demos/network_manager/aws_iot_demo_network.c
 SRC_C += ../../../lib_amazon/amazon-freertos-202012.00/demos/network_manager/aws_iot_network_manager.c
@@ -670,7 +679,7 @@ SRC_C += ../src/main.c
 # -------------------------------------------------------------------
 #@CINIT
 CINIT_C += ../../../component/soc/realtek/8195b/fwlib/hal-rtl8195b-hp/source/ram/hal_timer.c
-CINIT_C += ../../../component/os/freertos/freertos_v10.0.0/portable/MemMang/heap_4_2.c
+CINIT_C += ../../../component/os/freertos/freertos_v10.4.3_port/MemMang/heap_4_2.c
 CINIT_C += ../../../component/soc/realtek/8195b/misc/utilities/source/ram/libc_wrap.c
 CINIT_C += ../../../project/realtek_amebapro_v0_example/src/isp_boot_config.c
 
@@ -756,8 +765,9 @@ LFLAGS += -Wl,-wrap,calloc
 LFLAGS += -Wl,-wrap,memcmp  -Wl,-wrap,memcpy
 LFLAGS += -Wl,-wrap,memmove -Wl,-wrap,memset
 LFLAGS += -Wl,-wrap,printf
-# LFLAGS += -Wl,-wrap,sprintf
-# LFLAGS += -Wl,-wrap,snprintf  -Wl,-wrap,vsnprintf  
+LFLAGS += -Wl,-wrap,sprintf
+# LFLAGS += -Wl,-wrap,snprintf  
+LFLAGS += -Wl,-wrap,vsnprintf  
 LFLAGS += -Wl,-wrap,vprintf
 LFLAGS += -Wl,-wrap,abort
 LFLAGS += -Wl,-wrap,puts

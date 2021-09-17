@@ -49,9 +49,8 @@ INCLUDES += -I../../../component/soc/realtek/8195b/app/rtl_printf/include
 INCLUDES += -I../../../component/soc/realtek/8195b/app/shell
 INCLUDES += -I../../../component/soc/realtek/8195b/app/stdio_port
 INCLUDES += -I../../../component/os/freertos
-INCLUDES += -I../../../component/os/freertos/freertos_v10.0.0/include
-INCLUDES += -I../../../component/os/freertos/freertos_v10.0.0/portable/GCC/ARM_RTL8195B
-INCLUDES += -I../../../component/os/freertos/freertos_v10.0.0/secure
+INCLUDES += -I../../../component/os/freertos/freertos_v10.4.3/include
+INCLUDES += -I../../../component/os/freertos/freertos_v10.4.3_port/GCC/ARM_CM33_NTZ/non_secure
 INCLUDES += -I../../../component/os/os_dep/include
 INCLUDES += -I../../../component/soc/realtek/8195b/misc/utilities/include
 INCLUDES += -I../../../component/soc/realtek/8195b/misc/platform
@@ -90,10 +89,10 @@ INCLUDES += -I../../../component/common/mbed/hal
 INCLUDES += -I../../../component/common/mbed/hal_ext
 INCLUDES += -I../../../component/common/mbed/targets/hal/rtl8195b/hal/rtl8195bh
 INCLUDES += -I../../../component/soc/realtek/8195b/misc/driver
-INCLUDES += -I../../../component/os/freertos/freertos_v10.0.0/portable/posix/lib/include
-INCLUDES += -I../../../component/os/freertos/freertos_v10.0.0/portable/posix/lib/FreeRTOS-Plus-POSIX/include/portable/realtek/rtl8195
-INCLUDES += -I../../../component/os/freertos/freertos_v10.0.0/portable/posix/lib/FreeRTOS-Plus-POSIX/include
-INCLUDES += -I../../../component/os/freertos/freertos_v10.0.0/portable/posix/lib/include/private
+INCLUDES += -I../../../component/os/freertos/posix/lib/include
+INCLUDES += -I../../../component/os/freertos/posix/lib/FreeRTOS-Plus-POSIX/include/portable/realtek/rtl8195
+INCLUDES += -I../../../component/os/freertos/posix/lib/FreeRTOS-Plus-POSIX/include
+INCLUDES += -I../../../component/os/freertos/posix/lib/include/private
 INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/freertos_plus/standard/utils/include
 INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/logging/include
 INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/abstractions/wifi/include
@@ -143,6 +142,8 @@ INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/device_sha
 INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/coreJSON/source/include
 INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/demos/common/mqtt_demo_helpers
 INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/freertos_plus/aws/ota/test
+INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/jobs_for_aws/source/include
+INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/device_defender_for_aws/source/include
 
 
 # Source file list
@@ -232,6 +233,10 @@ SRC_C += ../../../lib_amazon/amazon-freertos-202012.00/libraries/coreMQTT/source
 SRC_C += ../../../lib_amazon/amazon-freertos-202012.00/libraries/coreMQTT/source/core_mqtt_state.c
 ##device_shadow_for_aws
 SRC_C += ../../../lib_amazon/amazon-freertos-202012.00/libraries/device_shadow_for_aws/source/shadow.c
+##device_defender_for_aws
+SRC_C += ../../../lib_amazon/amazon-freertos-202012.00/libraries/device_defender_for_aws/source/defender.c
+##jobs_for_aws
+SRC_C += ../../../lib_amazon/amazon-freertos-202012.00/libraries/jobs_for_aws/source/jobs.c
 ##freertos_plus
 #aws
 SRC_C += ../../../lib_amazon/amazon-freertos-202012.00/libraries/freertos_plus/aws/ota/src/aws_iot_ota_agent.c
