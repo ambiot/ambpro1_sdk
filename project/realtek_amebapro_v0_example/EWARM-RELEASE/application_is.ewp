@@ -373,9 +373,8 @@
                     <state>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\app\shell</state>
                     <state>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\app\stdio_port</state>
                     <state>$PROJ_DIR$\..\..\..\component\os\freertos</state>
-                    <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\include</state>
-                    <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\IAR\ARM_RTL8195B</state>
-                    <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\secure</state>
+                    <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.4.3\include</state>
+                    <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.4.3_port\IAR\ARM_CM33_NTZ\non_secure</state>
                     <state>$PROJ_DIR$\..\..\..\component\os\os_dep\include</state>
                     <state>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\misc\utilities\include</state>
                     <state>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\misc\platform</state>
@@ -468,10 +467,10 @@
                     <state>$PROJ_DIR$\..\src\eval\sensor_board_v1</state>
                     <state>$PROJ_DIR$\..\..\..\component\common\audio\hmp3</state>
                     <state>$PROJ_DIR$\..\..\..\component\common\media\AlgoObjDetect</state>
-                    <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\posix\lib\include</state>
-                    <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\posix\lib\FreeRTOS-Plus-POSIX\include\portable\realtek\rtl8195</state>
-                    <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\posix\lib\FreeRTOS-Plus-POSIX\include</state>
-                    <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\posix\lib\include\private</state>
+                    <state>$PROJ_DIR$\..\..\..\component\os\freertos\posix\lib\include</state>
+                    <state>$PROJ_DIR$\..\..\..\component\os\freertos\posix\lib\FreeRTOS-Plus-POSIX\include\portable\realtek\rtl8195</state>
+                    <state>$PROJ_DIR$\..\..\..\component\os\freertos\posix\lib\FreeRTOS-Plus-POSIX\include</state>
+                    <state>$PROJ_DIR$\..\..\..\component\os\freertos\posix\lib\include\private</state>
                 </option>
                 <option>
                     <name>CCStdIncCheck</name>
@@ -931,10 +930,10 @@
                     <state>--redirect calloc=__wrap_calloc</state>
                     <state>--redirect free=__wrap_free</state>
                     <state>--redirect printf=__wrap_printf</state>
-                    <state>--redirect sprintf____=__wrap_sprintf</state>
+                    <state>--redirect sprintf=__wrap_sprintf</state>
                     <state>--redirect snprintf____=__wrap_snprintf</state>
-                    <state>--redirect vsprintf____=__wrap_vsprintf</state>
-                    <state>--redirect vsnprintf____=__wrap_vsnprintf</state>
+                    <state>--redirect vsprintf=__wrap_vsprintf</state>
+                    <state>--redirect vsnprintf=__wrap_vsnprintf</state>
                     <state>--redirect memcmp=__wrap_memcmp</state>
                     <state>--redirect memcpy=__wrap_memcpy</state>
                     <state>--redirect memmove=__wrap_memmove</state>
@@ -1215,7 +1214,7 @@
             <name>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\fwlib\hal-rtl8195b-hp\source\ram\hal_timer.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\MemMang\heap_4_2.c</name>
+            <name>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.4.3_port\MemMang\heap_4_2.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\..\src\isp_boot_config.c</name>
@@ -1387,9 +1386,8 @@
                         <state>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\app\shell</state>
                         <state>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\app\stdio_port</state>
                         <state>$PROJ_DIR$\..\..\..\component\os\freertos</state>
-                        <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\include</state>
-                        <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\IAR\ARM_RTL8195B</state>
-                        <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\secure</state>
+                        <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.4.3\include</state>
+                        <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.4.3_port\IAR\ARM_CM33_NTZ\non_secure</state>
                         <state>$PROJ_DIR$\..\..\..\component\os\os_dep\include</state>
                         <state>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\misc\utilities\include</state>
                         <state>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\misc\platform</state>
@@ -1750,9 +1748,8 @@
                         <state>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\app\shell</state>
                         <state>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\app\stdio_port</state>
                         <state>$PROJ_DIR$\..\..\..\component\os\freertos</state>
-                        <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\include</state>
-                        <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\IAR\ARM_RTL8195B</state>
-                        <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\secure</state>
+                        <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.4.3\include</state>
+                        <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.4.3_port\IAR\ARM_CM33_NTZ\non_secure</state>
                         <state>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\misc\utilities\include</state>
                         <state>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\fwlib\hal-rtl8195b-hp\include\usb_otg</state>
                         <state>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\fwlib\hal-rtl8195b-hp\lib\include\usb_otg</state>
@@ -2165,72 +2162,66 @@
                     <group>
                         <name>posix</name>
                         <file>
-                            <name>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\posix\lib\FreeRTOS-Plus-POSIX\source\FreeRTOS_POSIX_clock.c</name>
+                            <name>$PROJ_DIR$\..\..\..\component\os\freertos\posix\lib\FreeRTOS-Plus-POSIX\source\FreeRTOS_POSIX_clock.c</name>
                         </file>
                         <file>
-                            <name>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\posix\lib\FreeRTOS-Plus-POSIX\source\FreeRTOS_POSIX_mqueue.c</name>
+                            <name>$PROJ_DIR$\..\..\..\component\os\freertos\posix\lib\FreeRTOS-Plus-POSIX\source\FreeRTOS_POSIX_mqueue.c</name>
                         </file>
                         <file>
-                            <name>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\posix\lib\FreeRTOS-Plus-POSIX\source\FreeRTOS_POSIX_pthread.c</name>
+                            <name>$PROJ_DIR$\..\..\..\component\os\freertos\posix\lib\FreeRTOS-Plus-POSIX\source\FreeRTOS_POSIX_pthread.c</name>
                         </file>
                         <file>
-                            <name>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\posix\lib\FreeRTOS-Plus-POSIX\source\FreeRTOS_POSIX_pthread_barrier.c</name>
+                            <name>$PROJ_DIR$\..\..\..\component\os\freertos\posix\lib\FreeRTOS-Plus-POSIX\source\FreeRTOS_POSIX_pthread_barrier.c</name>
                         </file>
                         <file>
-                            <name>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\posix\lib\FreeRTOS-Plus-POSIX\source\FreeRTOS_POSIX_pthread_cond.c</name>
+                            <name>$PROJ_DIR$\..\..\..\component\os\freertos\posix\lib\FreeRTOS-Plus-POSIX\source\FreeRTOS_POSIX_pthread_cond.c</name>
                         </file>
                         <file>
-                            <name>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\posix\lib\FreeRTOS-Plus-POSIX\source\FreeRTOS_POSIX_pthread_mutex.c</name>
+                            <name>$PROJ_DIR$\..\..\..\component\os\freertos\posix\lib\FreeRTOS-Plus-POSIX\source\FreeRTOS_POSIX_pthread_mutex.c</name>
                         </file>
                         <file>
-                            <name>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\posix\lib\FreeRTOS-Plus-POSIX\source\FreeRTOS_POSIX_sched.c</name>
+                            <name>$PROJ_DIR$\..\..\..\component\os\freertos\posix\lib\FreeRTOS-Plus-POSIX\source\FreeRTOS_POSIX_sched.c</name>
                         </file>
                         <file>
-                            <name>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\posix\lib\FreeRTOS-Plus-POSIX\source\FreeRTOS_POSIX_semaphore.c</name>
+                            <name>$PROJ_DIR$\..\..\..\component\os\freertos\posix\lib\FreeRTOS-Plus-POSIX\source\FreeRTOS_POSIX_semaphore.c</name>
                         </file>
                         <file>
-                            <name>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\posix\lib\FreeRTOS-Plus-POSIX\source\FreeRTOS_POSIX_timer.c</name>
+                            <name>$PROJ_DIR$\..\..\..\component\os\freertos\posix\lib\FreeRTOS-Plus-POSIX\source\FreeRTOS_POSIX_timer.c</name>
                         </file>
                         <file>
-                            <name>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\posix\lib\FreeRTOS-Plus-POSIX\source\FreeRTOS_POSIX_unistd.c</name>
+                            <name>$PROJ_DIR$\..\..\..\component\os\freertos\posix\lib\FreeRTOS-Plus-POSIX\source\FreeRTOS_POSIX_unistd.c</name>
                         </file>
                         <file>
-                            <name>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\posix\lib\FreeRTOS-Plus-POSIX\source\FreeRTOS_POSIX_utils.c</name>
+                            <name>$PROJ_DIR$\..\..\..\component\os\freertos\posix\lib\FreeRTOS-Plus-POSIX\source\FreeRTOS_POSIX_utils.c</name>
                         </file>
                     </group>
                     <file>
-                        <name>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\MemMang\heap_4.c</name>
-                        <excluded>
-                            <configuration>Debug</configuration>
-                        </excluded>
+                        <name>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.4.3_port\IAR\ARM_CM33_NTZ\non_secure\port.c</name>
                     </file>
                     <file>
-                        <name>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\IAR\ARM_RTL8195B\port.c</name>
-                    </file>
-                    <file>
-                        <name>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\IAR\ARM_RTL8195B\portasm.s</name>
+                        <name>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.4.3_port\IAR\ARM_CM33_NTZ\non_secure\portasm.s</name>
                     </file>
                 </group>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\croutine.c</name>
+                    <name>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.4.3\croutine.c</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\event_groups.c</name>
+                    <name>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.4.3\event_groups.c</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\list.c</name>
+                    <name>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.4.3\list.c</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\queue.c</name>
+                    <name>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.4.3\queue.c</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\stream_buffer.c</name>
+                    <name>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.4.3\stream_buffer.c</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\tasks.c</name>
+                    <name>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.4.3\tasks.c</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\timers.c</name>
+                    <name>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.4.3\timers.c</name>
                 </file>
             </group>
             <file>
@@ -2416,9 +2407,8 @@
                         <state>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\app\shell</state>
                         <state>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\app\stdio_port</state>
                         <state>$PROJ_DIR$\..\..\..\component\os\freertos</state>
-                        <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\include</state>
-                        <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\IAR\ARM_RTL8195B</state>
-                        <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\secure</state>
+                        <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.4.3\include</state>
+                        <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.4.3_port\IAR\ARM_CM33_NTZ\non_secure</state>
                         <state>$PROJ_DIR$\..\..\..\component\os\os_dep\include</state>
                         <state>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\misc\utilities\include</state>
                         <state>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\misc\platform</state>
@@ -2507,10 +2497,10 @@
                         <state>$PROJ_DIR$\..\..\..\component\common\mbed\hal</state>
                         <state>$PROJ_DIR$\..\..\..\component\common\mbed\hal_ext</state>
                         <state>$PROJ_DIR$\..\..\..\component\common\mbed\targets\hal\rtl8195b\hal\rtl8195bh</state>
-                        <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\posix\lib\include</state>
-                        <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\posix\lib\FreeRTOS-Plus-POSIX\include\portable\realtek\rtl8195</state>
-                        <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\posix\lib\FreeRTOS-Plus-POSIX\include</state>
-                        <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\posix\lib\include\private</state>
+                        <state>$PROJ_DIR$\..\..\..\component\os\freertos\posix\lib\include</state>
+                        <state>$PROJ_DIR$\..\..\..\component\os\freertos\posix\lib\FreeRTOS-Plus-POSIX\include\portable\realtek\rtl8195</state>
+                        <state>$PROJ_DIR$\..\..\..\component\os\freertos\posix\lib\FreeRTOS-Plus-POSIX\include</state>
+                        <state>$PROJ_DIR$\..\..\..\component\os\freertos\posix\lib\include\private</state>
                     </option>
                     <option>
                         <name>CCStdIncCheck</name>
@@ -2798,9 +2788,8 @@
                         <state>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\app\shell</state>
                         <state>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\app\stdio_port</state>
                         <state>$PROJ_DIR$\..\..\..\component\os\freertos</state>
-                        <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\include</state>
-                        <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\IAR\ARM_RTL8195B</state>
-                        <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\secure</state>
+                        <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.4.3\include</state>
+                        <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.4.3_port\IAR\ARM_CM33_NTZ\non_secure</state>
                         <state>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\misc\utilities\include</state>
                         <state>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\fwlib\hal-rtl8195b-hp\include\usb_otg</state>
                         <state>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\fwlib\hal-rtl8195b-hp\lib\include\usb_otg</state>
@@ -3042,9 +3031,6 @@
         <group>
             <name>amazon</name>
             <file>
-                <name>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\misc\bsp\lib\common\IAR\lib_amazon_LTS.a</name>
-            </file>
-            <file>
                 <name>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\misc\bsp\lib\common\IAR\lib_kvs_producer.a</name>
             </file>
             <file>
@@ -3065,6 +3051,9 @@
         </group>
         <file>
             <name>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\fwlib\hal-rtl8195b-hp\lib\lib\hal_pmc_hs.a</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\misc\bsp\lib\common\IAR\lib_amazon_LTS.a</name>
         </file>
         <file>
             <name>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\misc\bsp\lib\common\IAR\lib_codec.a</name>
@@ -3670,9 +3659,30 @@
                         </file>
                     </group>
                     <group>
+                        <name>device_defender_for_aws</name>
+                        <group>
+                            <name>metrics_collector</name>
+                            <file>
+                                <name>$PROJ_DIR$\..\..\..\lib_amazon\amazon-freertos-202012.00\demos\device_defender_for_aws\metrics_collector\lwip\metrics_collector.c</name>
+                            </file>
+                        </group>
+                        <file>
+                            <name>$PROJ_DIR$\..\..\..\lib_amazon\amazon-freertos-202012.00\demos\device_defender_for_aws\defender_demo.c</name>
+                        </file>
+                        <file>
+                            <name>$PROJ_DIR$\..\..\..\lib_amazon\amazon-freertos-202012.00\demos\device_defender_for_aws\report_builder.c</name>
+                        </file>
+                    </group>
+                    <group>
                         <name>device_shadow_for_aws</name>
                         <file>
                             <name>$PROJ_DIR$\..\..\..\lib_amazon\amazon-freertos-202012.00\demos\device_shadow_for_aws\shadow_demo_main.c</name>
+                        </file>
+                    </group>
+                    <group>
+                        <name>jobs_for_aws</name>
+                        <file>
+                            <name>$PROJ_DIR$\..\..\..\lib_amazon\amazon-freertos-202012.00\demos\jobs_for_aws\jobs_demo.c</name>
                         </file>
                     </group>
                     <group>
@@ -3860,9 +3870,8 @@
                                 <state>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\app\shell</state>
                                 <state>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\app\stdio_port</state>
                                 <state>$PROJ_DIR$\..\..\..\component\os\freertos</state>
-                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\include</state>
-                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\IAR\ARM_RTL8195B</state>
-                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\secure</state>
+                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.4.3\include</state>
+                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.4.3_port\IAR\ARM_CM33_NTZ\non_secure</state>
                                 <state>$PROJ_DIR$\..\..\..\component\os\os_dep\include</state>
                                 <state>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\misc\utilities\include</state>
                                 <state>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\misc\platform</state>
@@ -3956,10 +3965,10 @@
                                 <state>$PROJ_DIR$\..\src\eval\sensor_board_v1</state>
                                 <state>$PROJ_DIR$\..\..\..\component\common\audio\hmp3</state>
                                 <state>$PROJ_DIR$\..\..\..\component\common\media\AlgoObjDetect</state>
-                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\posix\lib\include</state>
-                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\posix\lib\FreeRTOS-Plus-POSIX\include\portable\realtek\rtl8195</state>
-                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\posix\lib\FreeRTOS-Plus-POSIX\include</state>
-                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\posix\lib\include\private</state>
+                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\posix\lib\include</state>
+                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\posix\lib\FreeRTOS-Plus-POSIX\include\portable\realtek\rtl8195</state>
+                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\posix\lib\FreeRTOS-Plus-POSIX\include</state>
+                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\posix\lib\include\private</state>
                                 <state>$PROJ_DIR$\..\..\..\lib_amazon\amazon-freertos-202012.00\tests\include______</state>
                                 <state>$PROJ_DIR$\..\..\..\lib_amazon\amazon-freertos-202012.00\vendors\realtek\boards\amebaPro\aws_tests\config_files______</state>
                                 <state>$PROJ_DIR$\..\..\..\lib_amazon\amazon-freertos-202012.00\libraries\freertos_plus\standard\utils\include</state>
@@ -4011,6 +4020,9 @@
                                 <state>$PROJ_DIR$\..\..\..\lib_amazon\amazon-freertos-202012.00\libraries\coreJSON\source\include</state>
                                 <state>$PROJ_DIR$\..\..\..\lib_amazon\amazon-freertos-202012.00\demos\common\mqtt_demo_helpers</state>
                                 <state>$PROJ_DIR$\..\..\..\lib_amazon\amazon-freertos-202012.00\libraries\freertos_plus\aws\ota\test</state>
+                                <state>$PROJ_DIR$\..\..\..\lib_amazon\amazon-freertos-202012.00\libraries\jobs_for_aws\source\include</state>
+                                <state>$PROJ_DIR$\..\..\..\lib_amazon\amazon-freertos-202012.00\libraries\device_defender_for_aws\source\include</state>
+                                <state>$PROJ_DIR$\..\..\..\lib_amazon\amazon-freertos-202012.00\demos\device_defender_for_aws</state>
                             </option>
                             <option>
                                 <name>CCStdIncCheck</name>
@@ -4295,9 +4307,8 @@
                                 <state>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\app\shell</state>
                                 <state>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\app\stdio_port</state>
                                 <state>$PROJ_DIR$\..\..\..\component\os\freertos</state>
-                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\include</state>
-                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\IAR\ARM_RTL8195B</state>
-                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\secure</state>
+                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.4.3\include</state>
+                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.4.3_port\IAR\ARM_CM33_NTZ\non_secure</state>
                                 <state>$PROJ_DIR$\..\..\..\component\os\os_dep\include</state>
                                 <state>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\misc\utilities\include</state>
                                 <state>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\misc\platform</state>
@@ -4390,10 +4401,10 @@
                                 <state>$PROJ_DIR$\..\src\eval\sensor_board_v1</state>
                                 <state>$PROJ_DIR$\..\..\..\component\common\audio\hmp3</state>
                                 <state>$PROJ_DIR$\..\..\..\component\common\media\AlgoObjDetect</state>
-                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\posix\lib\include</state>
-                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\posix\lib\FreeRTOS-Plus-POSIX\include\portable\realtek\rtl8195</state>
-                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\posix\lib\FreeRTOS-Plus-POSIX\include</state>
-                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\posix\lib\include\private</state>
+                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\posix\lib\include</state>
+                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\posix\lib\FreeRTOS-Plus-POSIX\include\portable\realtek\rtl8195</state>
+                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\posix\lib\FreeRTOS-Plus-POSIX\include</state>
+                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\posix\lib\include\private</state>
                                 <state>$PROJ_DIR$\..\..\..\lib_amazon\amazon-kinesis-video-streams-producer-embedded-c\src\include</state>
                             </option>
                             <option>
@@ -4680,9 +4691,8 @@
                                 <state>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\app\shell</state>
                                 <state>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\app\stdio_port</state>
                                 <state>$PROJ_DIR$\..\..\..\component\os\freertos</state>
-                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\include</state>
-                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\IAR\ARM_RTL8195B</state>
-                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\secure</state>
+                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.4.3\include</state>
+                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.4.3_port\IAR\ARM_CM33_NTZ\non_secure</state>
                                 <state>$PROJ_DIR$\..\..\..\component\os\os_dep\include</state>
                                 <state>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\misc\utilities\include</state>
                                 <state>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\misc\platform</state>
@@ -4773,10 +4783,10 @@
                                 <state>$PROJ_DIR$\..\src\eval\sensor_board_v1</state>
                                 <state>$PROJ_DIR$\..\..\..\component\common\audio\hmp3</state>
                                 <state>$PROJ_DIR$\..\..\..\component\common\media\AlgoObjDetect</state>
-                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\posix\lib\include</state>
-                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\posix\lib\FreeRTOS-Plus-POSIX\include\portable\realtek\rtl8195</state>
-                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\posix\lib\FreeRTOS-Plus-POSIX\include</state>
-                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\posix\lib\include\private</state>
+                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\posix\lib\include</state>
+                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\posix\lib\FreeRTOS-Plus-POSIX\include\portable\realtek\rtl8195</state>
+                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\posix\lib\FreeRTOS-Plus-POSIX\include</state>
+                                <state>$PROJ_DIR$\..\..\..\component\os\freertos\posix\lib\include\private</state>
                                 <state>$PROJ_DIR$\..\..\..\lib_amazon\amazon-kinesis-video-streams-pic\src\client\include</state>
                                 <state>$PROJ_DIR$\..\..\..\lib_amazon\amazon-kinesis-video-streams-pic\src\common\include</state>
                                 <state>$PROJ_DIR$\..\..\..\lib_amazon\amazon-kinesis-video-streams-pic\src\heap\include</state>

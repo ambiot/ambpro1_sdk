@@ -436,4 +436,13 @@ Certain platform allows computing and verifying the IP, UDP, TCP and ICMP checks
      
 #include "lwip/init.h"                  //for version control
 
+#define LWIP_AMAZON_FREERTOS_LTS_DEMO 	1
+#if LWIP_AMAZON_FREERTOS_LTS_DEMO
+#undef LWIP_STATS
+#define LWIP_STATS 1
+#define MIB2_STATS 1
+#define LWIP_TCPIP_CORE_LOCKING         1
+#define LWIP_COMPAT_MUTEX_ALLOWED       1
+#endif
+
 #endif /* LWIP_HDR_LWIPOPTS_H */

@@ -287,7 +287,7 @@ static void _freertos_cpu_unlock(void)
 	//gtimer_deinit(&tmp_timer_obj);
         uint32_t duration = (us_ticker_read()-lock_ticker)/1000;
 	// compensate rtos tick
-	vTaskIncTick(duration);
+	//vTaskIncTick(duration);
 	dcache_enable();
 	icache_enable();	
 	icache_invalidate();
@@ -714,7 +714,7 @@ static int _freertos_create_task(struct task_struct *ptask, const char *name,
 				stack_size,
 				task_ctx,
 				priority,
-				&ptask->task);
+				(TaskHandle_t *)&ptask->task);
 
 	}
 	if(ret != pdPASS){
@@ -758,7 +758,7 @@ _timerHandle _freertos_timerCreate( const signed char *pcTimerName,
 	if(xTimerPeriodInTicks == TIMER_MAX_DELAY) {
 		xTimerPeriodInTicks = portMAX_DELAY;
 	}
-	return xTimerCreate((const char *)pcTimerName, xTimerPeriodInTicks, uxAutoReload, pvTimerID, pxCallbackFunction);	
+	return xTimerCreate((const char *)pcTimerName, xTimerPeriodInTicks, uxAutoReload, pvTimerID, (TimerCallbackFunction_t)pxCallbackFunction);	
 }
 
 u32 _freertos_timerDelete( _timerHandle xTimer, 

@@ -142,7 +142,7 @@ void uart_irq(u32 id,u32 event)
 				stdio_port_putc(KEY_ENTER);
                                 memset(log_buf,'\0',LOG_SERVICE_BUFLEN);
 				strncpy(log_buf,(char *)&temp_buf[0],buf_count);
-				rtw_up_sema_from_isr(&log_rx_interrupt_sema);
+				rtw_up_sema_from_isr((_sema*)&log_rx_interrupt_sema);
 				memset(temp_buf,'\0',buf_count);
 
 				/* save command */

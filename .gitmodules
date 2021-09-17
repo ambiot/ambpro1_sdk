@@ -28,3 +28,7 @@
 [submodule "lib_amazon/amazon-kinesis-video-streams-webrtc-sdk-c-for-freertos"]
 	path = lib_amazon/amazon-kinesis-video-streams-webrtc-sdk-c-for-freertos
 	url = https://github.com/ambiot-mini/amazon-kinesis-video-streams-webrtc-sdk-c-for-freertos.git
+[submodule "component/os/freertos/freertos_v10.4.3"]
+	path = component/os/freertos/freertos_v10.4.3
+	url = https://github.com/FreeRTOS/FreeRTOS-Kernel.git
+	branch = V10.4.3-LTS-Patch-1

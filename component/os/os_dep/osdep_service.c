@@ -477,7 +477,7 @@ void rtw_free_sema(_sema *sema)
 }
 
 
-#if defined(__GNUC__)
+#if defined(__ICCARM__) || defined(__GNUC__)
 #include <cmsis.h>
 #endif
 

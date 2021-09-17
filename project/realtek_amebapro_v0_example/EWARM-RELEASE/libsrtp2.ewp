@@ -362,9 +362,8 @@
                     <state>$PROJ_DIR$\..\..\..\lib_amazon\libsrtp\include</state>
                     <state>$PROJ_DIR$\..\..\..\lib_amazon\libsrtp</state>
                     <state>$PROJ_DIR$\..\..\..\component\os\freertos</state>
-                    <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\include</state>
-                    <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\IAR\ARM_RTL8195B</state>
-                    <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\secure</state>
+                    <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.4.3\include</state>
+                    <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.4.3_port\IAR\ARM_CM33_NTZ\non_secure</state>
                     <state>$PROJ_DIR$\..\..\..\component\os\os_dep\include</state>
                     <state>$PROJ_DIR$\..\..\..\component\common\api</state>
                     <state>$PROJ_DIR$\..\..\..\component\common\api\platform</state>

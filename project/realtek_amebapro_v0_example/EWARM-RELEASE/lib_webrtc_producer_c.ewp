@@ -360,13 +360,13 @@
                     <name>CCIncludePath2</name>
                     <state>$PROJ_DIR$\..\inc</state>
                     <state>$PROJ_DIR$\..\..\..\lib_amazon\iar_include</state>
-                    <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\posix\lib\include</state>
-                    <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\posix\lib\FreeRTOS-Plus-POSIX\include\portable\realtek\rtl8195</state>
-                    <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\posix\lib\FreeRTOS-Plus-POSIX\include</state>
-                    <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\posix\lib\include\private</state>
-                    <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\include</state>
+                    <state>$PROJ_DIR$\..\..\..\component\os\freertos\posix\lib\include</state>
+                    <state>$PROJ_DIR$\..\..\..\component\os\freertos\posix\lib\FreeRTOS-Plus-POSIX\include\portable\realtek\rtl8195</state>
+                    <state>$PROJ_DIR$\..\..\..\component\os\freertos\posix\lib\FreeRTOS-Plus-POSIX\include</state>
+                    <state>$PROJ_DIR$\..\..\..\component\os\freertos\posix\lib\include\private</state>
                     <state>$PROJ_DIR$\..\..\..\component\os\freertos</state>
-                    <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\IAR\ARM_RTL8195B</state>
+                    <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.4.3\include</state>
+                    <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.4.3_port\IAR\ARM_CM33_NTZ\non_secure</state>
                     <state>$PROJ_DIR$\..\..\..\component\common\api\platform</state>
                     <state>$PROJ_DIR$\..\..\..\component\soc\realtek\8195b\cmsis\rtl8195b-hp\include</state>
                     <state>$PROJ_DIR$\..\..\..\component\common\api</state>
@@ -388,8 +388,8 @@
                     <state>$PROJ_DIR$\..\..\..\component\common\network\lwip\lwip_v2.0.2\port\realtek</state>
                     <state>$PROJ_DIR$\..\..\..\component\common\network\lwip\lwip_v2.0.2\port\realtek\freertos</state>
                     <state>$PROJ_DIR$\..\..\..\component\common\network\ssl\ssl_ram_map\rom</state>
-                    <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\posix\lib\include\FreeRTOS_POSIX</state>
-                    <state>$PROJ_DIR$\..\..\..\component\os\freertos\freertos_v10.0.0\portable\posix\lib\FreeRTOS-Plus-POSIX\include\portable\realtek\rtl8195</state>
+                    <state>$PROJ_DIR$\..\..\..\component\os\freertos\posix\lib\include\FreeRTOS_POSIX</state>
+                    <state>$PROJ_DIR$\..\..\..\component\os\freertos\posix\lib\FreeRTOS-Plus-POSIX\include\portable\realtek\rtl8195</state>
                     <state>$PROJ_DIR$\..\..\..\lib_amazon\libwebsockets\include</state>
                     <state>$PROJ_DIR$\..\..\..\lib_amazon\libwebsockets</state>
                     <state>$PROJ_DIR$\..\..\..\component\common\file_system\fatfs\r0.14</state>
