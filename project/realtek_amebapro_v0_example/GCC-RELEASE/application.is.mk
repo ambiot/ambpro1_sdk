@@ -236,57 +236,68 @@ INCLUDES += -I../../../component/common/audio/libopusenc-0.2.1/include
 INCLUDES += -I../../../lib_amazon/libusrsctp/usrsctplib
 INCLUDES += -I../../../lib_amazon/libusrsctp/usrsctplib/netinet
 INCLUDES += -I../../../lib_amazon/libusrsctp/usrsctplib/netinet6
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/freertos_plus/standard/utils/include
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/logging/include
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/abstractions/wifi/include
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/3rdparty/unity/src
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/3rdparty/unity/extras/fixture/src
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/c_sdk/standard/common/include
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/abstractions/platform/freertos/include
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/abstractions/platform/include
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/abstractions/secure_sockets/include
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/c_sdk/standard/common/include/private
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/abstractions/pkcs11/corePKCS11/source/include
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/abstractions/pkcs11/corePKCS11/source/dependency/3rdparty/pkcs11
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/c_sdk/standard/common/include/private
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/c_sdk/standard/common/include/private
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/abstractions/backoff_algorithm/source/include
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/coreHTTP/source/include
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/coreHTTP/source/interface
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/abstractions/transport/secure_sockets
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/coreMQTT/source/include
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/3rdparty/jsmn
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/freertos_plus/aws/ota/include
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/3rdparty/mbedtls_utils
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/3rdparty/mbedtls_config______
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/3rdparty/mbedtls/include______
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/freertos_plus/standard/crypto/include
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/demos/dev_mode_key_provisioning/include
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/c_sdk/aws/defender/include
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/c_sdk/standard/mqtt/include
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/c_sdk/standard/serializer/include
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/c_sdk/aws/shadow/include
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/c_sdk/standard/mqtt/test/access
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/coreHTTP/source/dependency/3rdparty/http_parser
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/c_sdk/standard/https/include
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/c_sdk/standard/https/test/access
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/c_sdk/standard/mqtt/src
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/c_sdk/standard/mqtt/test/mock
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/3rdparty/tinycbor/src
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/freertos_plus/aws/ota/src
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/freertos_plus/standard/tls/include
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/demos/common/pkcs11_helpers
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/demos/include
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/demos/network_manager
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/vendors/realtek/boards/amebaPro/aws_demos/config_files
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/demos/common/http_demo_helpers
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/device_shadow_for_aws/source/include
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/coreJSON/source/include
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/demos/common/mqtt_demo_helpers
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/freertos_plus/aws/ota/test
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/jobs_for_aws/source/include
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/libraries/device_defender_for_aws/source/include
-INCLUDES += -I../../../lib_amazon/amazon-freertos-202012.00/demos/device_defender_for_aws
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/freertos_plus/standard/utils/include
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/logging/include
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/abstractions/wifi/include
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/3rdparty/unity/src
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/3rdparty/unity/extras/fixture/src
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/c_sdk/standard/common/include
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/abstractions/platform/freertos/include
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/abstractions/platform/include
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/abstractions/secure_sockets/include
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/c_sdk/standard/common/include/private
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/abstractions/pkcs11/corePKCS11/source/include
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/abstractions/pkcs11/corePKCS11/source/dependency/3rdparty/pkcs11
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/c_sdk/standard/common/include/private
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/c_sdk/standard/common/include/private
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/abstractions/backoff_algorithm/source/include
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/coreHTTP/source/include
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/coreHTTP/source/interface
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/abstractions/transport/secure_sockets
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/coreMQTT/source/include
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/3rdparty/jsmn
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/freertos_plus/aws/ota/include
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/3rdparty/mbedtls_utils
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/3rdparty/mbedtls_config______
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/3rdparty/mbedtls/include______
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/freertos_plus/standard/crypto/include
+INCLUDES += -I../../../lib_amazon/freertos_LTS/demos/dev_mode_key_provisioning/include
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/c_sdk/aws/defender/include
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/c_sdk/standard/mqtt/include
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/c_sdk/standard/serializer/include
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/c_sdk/aws/shadow/include
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/c_sdk/standard/mqtt/test/access
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/coreHTTP/source/dependency/3rdparty/http_parser
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/c_sdk/standard/https/include
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/c_sdk/standard/https/test/access
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/c_sdk/standard/mqtt/src
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/c_sdk/standard/mqtt/test/mock
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/3rdparty/tinycbor/src
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/freertos_plus/aws/ota/src
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/freertos_plus/standard/tls/include
+INCLUDES += -I../../../lib_amazon/freertos_LTS/demos/common/pkcs11_helpers
+INCLUDES += -I../../../lib_amazon/freertos_LTS/demos/include
+INCLUDES += -I../../../lib_amazon/freertos_LTS/demos/network_manager
+INCLUDES += -I../../../lib_amazon/freertos_LTS/vendors/realtek/boards/amebaPro/aws_demos/config_files
+INCLUDES += -I../../../lib_amazon/freertos_LTS/demos/common/http_demo_helpers
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/device_shadow_for_aws/source/include
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/coreJSON/source/include
+INCLUDES += -I../../../lib_amazon/freertos_LTS/demos/common/mqtt_demo_helpers
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/freertos_plus/aws/ota/test
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/jobs_for_aws/source/include
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/device_defender_for_aws/source/include
+INCLUDES += -I../../../lib_amazon/freertos_LTS/demos/device_defender_for_aws
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/abstractions/platform/include/platform
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/coreMQTT-Agent/source/include
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/abstractions/mqtt_agent/include
+INCLUDES += -I../../../lib_amazon/freertos_LTS/demos/common/mqtt_subscription_manager
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/ota_for_aws/source/include
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/ota_for_aws/source
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/ota_for_aws/source/portable
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/ota_for_aws/source/portable/os
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/abstractions/mqtt_agent/include
+INCLUDES += -I../../../lib_amazon/freertos_LTS/vendors/realtek/boards/amebaPro/ports/ota
+INCLUDES += -I../../../lib_amazon/freertos_LTS/libraries/coreMQTT-Agent/source/include
 
 
 # Source file list
@@ -622,39 +633,39 @@ SRC_C += ../../../lib_amazon/amazon-kinesis-video-streams-webrtc-sdk-c-for-freer
 SRC_C += ../../../lib_amazon/amazon-kinesis-video-streams-webrtc-sdk-c-for-freertos/main_amebapro/example_kvs_webrtc.c
 SRC_C += ../../../lib_amazon/amazon-kinesis-video-streams-producer-embedded-c/samples/kvs-amebapro/kvs_producer.c
 SRC_C += ../../../lib_amazon/amazon-kinesis-video-streams-producer-embedded-c/samples/kvs-amebapro/example_kvs_producer.c
-SRC_C += ../../../lib_amazon/amazon-freertos-202012.00/vendors/realtek/boards/amebaPro/aws_demos/application_code/aws_main.c
+SRC_C += ../../../lib_amazon/freertos_LTS/vendors/realtek/boards/amebaPro/aws_demos/application_code/aws_main.c
 SRC_C += ../../../component/common/example/amazon_freertos/example_amazon_freertos.c
 
 ##amazon_freertos_LTS - demos
 #common
-SRC_C += ../../../lib_amazon/amazon-freertos-202012.00/demos/common/http_demo_helpers/http_demo_utils.c
-SRC_C += ../../../lib_amazon/amazon-freertos-202012.00/demos/common/mqtt_demo_helpers/mqtt_demo_helpers.c
-SRC_C += ../../../lib_amazon/amazon-freertos-202012.00/demos/common/pkcs11_helpers/pkcs11_helpers.c
+SRC_C += ../../../lib_amazon/freertos_LTS/demos/common/http_demo_helpers/http_demo_utils.c
+SRC_C += ../../../lib_amazon/freertos_LTS/demos/common/mqtt_demo_helpers/mqtt_demo_helpers.c
+SRC_C += ../../../lib_amazon/freertos_LTS/demos/common/mqtt_subscription_manager/mqtt_subscription_manager.c
+SRC_C += ../../../lib_amazon/freertos_LTS/demos/common/ota_demo_helpers/ota_application_version.c
+SRC_C += ../../../lib_amazon/freertos_LTS/demos/common/pkcs11_helpers/pkcs11_helpers.c
 #coreHTTP
-SRC_C += ../../../lib_amazon/amazon-freertos-202012.00/demos/coreHTTP/http_demo_mutual_auth.c
-SRC_C += ../../../component/common/application/amazon/JPEG_snapshot_s3_upload_example/http_demo_s3_upload.c
+SRC_C += ../../../lib_amazon/freertos_LTS/demos/coreHTTP/http_demo_mutual_auth.c
 #coreMQTT
-SRC_C += ../../../lib_amazon/amazon-freertos-202012.00/demos/coreMQTT/mqtt_demo_mutual_auth.c
+SRC_C += ../../../lib_amazon/freertos_LTS/demos/coreMQTT/mqtt_demo_mutual_auth.c
 #demo_runner
-SRC_C += ../../../lib_amazon/amazon-freertos-202012.00/demos/demo_runner/aws_demo.c
-SRC_C += ../../../lib_amazon/amazon-freertos-202012.00/demos/demo_runner/aws_demo_version.c
-SRC_C += ../../../lib_amazon/amazon-freertos-202012.00/demos/demo_runner/iot_demo_freertos.c
-SRC_C += ../../../lib_amazon/amazon-freertos-202012.00/demos/demo_runner/iot_demo_runner.c
+SRC_C += ../../../lib_amazon/freertos_LTS/demos/demo_runner/aws_demo.c
+SRC_C += ../../../lib_amazon/freertos_LTS/demos/demo_runner/iot_demo_freertos.c
+SRC_C += ../../../lib_amazon/freertos_LTS/demos/demo_runner/iot_demo_runner.c
 #dev_mode_key_provisioning
-SRC_C += ../../../lib_amazon/amazon-freertos-202012.00/demos/dev_mode_key_provisioning/src/aws_dev_mode_key_provisioning.c
+SRC_C += ../../../lib_amazon/freertos_LTS/demos/dev_mode_key_provisioning/src/aws_dev_mode_key_provisioning.c
 #device_shadow_for_aws
-SRC_C += ../../../lib_amazon/amazon-freertos-202012.00/demos/device_shadow_for_aws/shadow_demo_main.c
+SRC_C += ../../../lib_amazon/freertos_LTS/demos/device_shadow_for_aws/shadow_demo_main.c
 #device_defender_for_aws
-SRC_C += ../../../lib_amazon/amazon-freertos-202012.00/demos/device_defender_for_aws/metrics_collector/lwip/metrics_collector.c
-SRC_C += ../../../lib_amazon/amazon-freertos-202012.00/demos/device_defender_for_aws/defender_demo.c
-SRC_C += ../../../lib_amazon/amazon-freertos-202012.00/demos/device_defender_for_aws/report_builder.c
+SRC_C += ../../../lib_amazon/freertos_LTS/demos/device_defender_for_aws/metrics_collector/lwip/metrics_collector.c
+SRC_C += ../../../lib_amazon/freertos_LTS/demos/device_defender_for_aws/defender_demo.c
+SRC_C += ../../../lib_amazon/freertos_LTS/demos/device_defender_for_aws/report_builder.c
 #jobs_for_aws
-SRC_C += ../../../lib_amazon/amazon-freertos-202012.00/demos/jobs_for_aws/jobs_demo.c
+SRC_C += ../../../lib_amazon/freertos_LTS/demos/jobs_for_aws/jobs_demo.c
 #network_manager
-SRC_C += ../../../lib_amazon/amazon-freertos-202012.00/demos/network_manager/aws_iot_demo_network.c
-SRC_C += ../../../lib_amazon/amazon-freertos-202012.00/demos/network_manager/aws_iot_network_manager.c
+SRC_C += ../../../lib_amazon/freertos_LTS/demos/network_manager/aws_iot_network_manager.c
 #ota
-SRC_C += ../../../lib_amazon/amazon-freertos-202012.00/demos/ota/aws_iot_ota_update_demo.c
+SRC_C += ../../../lib_amazon/freertos_LTS/demos/ota/ota_demo_core_mqtt/ota_demo_core_mqtt.c
+SRC_C += ../../../lib_amazon/freertos_LTS/demos/ota/ota_demo_core_http/ota_demo_core_http.c
 
 
 #FatFs

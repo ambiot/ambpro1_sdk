@@ -1,7 +1,3 @@
-[submodule "lib_amazon/amazon-freertos-202012.00"]
-	path = lib_amazon/amazon-freertos-202012.00
-	url = https://github.com/ambiot/amazon-freertos.git
-	branch = amebaPro-5.2h-202012.00-LTS
 [submodule "lib_amazon/amazon-kinesis-video-streams-pic"]
 	path = lib_amazon/amazon-kinesis-video-streams-pic
 	url = https://github.com/ambiot-mini/amazon-kinesis-video-streams-pic.git
@@ -32,3 +28,7 @@
 	path = component/os/freertos/freertos_v10.4.3
 	url = https://github.com/FreeRTOS/FreeRTOS-Kernel.git
 	branch = V10.4.3-LTS-Patch-1
+[submodule "lib_amazon/freertos_LTS"]
+	path = lib_amazon/freertos_LTS
+	url = https://github.com/ambiot/amazon-freertos.git
+	branch = amebaPro-5.2h-202107.00-LTS
