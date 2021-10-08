@@ -35,7 +35,6 @@
 #if CONFIG_EFUSE_EN
 
 //#define EFUSE_LOGICAL_SIM
-#define EFUSE_LS
 
 #define EFUSE_LOGICAL_MAP_SIZE			512
 #define EFUSE_LOGICAL_MAP_HW_SIZE		0x100
@@ -47,7 +46,7 @@
 #ifdef EFUSE_LOGICAL_SIM
 u8 efuse_sim_map[256];
 #endif
-int efuse_logical_read(u16 laddr, u16 size, u8 *pbuf)
+static int efuse_logical_map_read(u16 laddr, u16 size, u8 *pbuf, u8 is_lp)
 {
     u16 phy_addr = 0;
     u8 offset, wden;
@@ -73,25 +72,24 @@ int efuse_logical_read(u16 laddr, u16 size, u8 *pbuf)
         if(!map_inited){
             map_inited = 1;
 			for(i=0;i<EFUSE_LOGICAL_MAP_HW_SIZE;i++){
-			#ifdef EFUSE_LS
-				hal_icc_ls_efuse_read(i, &efuse_sim_map[i]);
-			#else
-                hal_efuse_read(EFUSE_CTRL_SETTING, i, &efuse_sim_map[i], LDO_OUT_DEFAULT_VOLT);
-			#endif
+				if(is_lp)
+					hal_icc_ls_efuse_read(i, &efuse_sim_map[i]);
+				else
+            	    hal_efuse_read(EFUSE_CTRL_SETTING, i, &efuse_sim_map[i], LDO_OUT_DEFAULT_VOLT);
 			}
         }
         ret = _TRUE;
         header = efuse_sim_map[phy_addr++];
 #else
-	#ifdef EFUSE_LS
-		ret = hal_icc_ls_efuse_read(phy_addr++, &header);
-		if(ret != HAL_OK)
-            return -1;
-	#else
-        ret = hal_efuse_read(EFUSE_CTRL_SETTING, phy_addr++, &header, LDO_OUT_DEFAULT_VOLT);
-		if(ret != _TRUE)
-            return -1;
-	#endif
+		if(is_lp){
+			ret = hal_icc_ls_efuse_read(phy_addr++, &header);
+			if(ret != HAL_OK)
+				return -1;
+		}else{
+			ret = hal_efuse_read(EFUSE_CTRL_SETTING, phy_addr++, &header, LDO_OUT_DEFAULT_VOLT);
+			if(ret != _TRUE)
+				return -1;
+		}
 #endif
         if (header == 0xFF) {/* not write */
             break;
@@ -104,15 +102,15 @@ int efuse_logical_read(u16 laddr, u16 size, u8 *pbuf)
             ret = _TRUE;
             extheader = efuse_sim_map[phy_addr++];
 #else
-		#ifdef EFUSE_LS
-			ret = hal_icc_ls_efuse_read(phy_addr++, &extheader);
-			if(ret != HAL_OK)
-				return -1;
-		#else
-            ret = hal_efuse_read(EFUSE_CTRL_SETTING, phy_addr++, &extheader, LDO_OUT_DEFAULT_VOLT);
-			if(ret != _TRUE)
-                return -1;
-		#endif
+			if(is_lp){
+				ret = hal_icc_ls_efuse_read(phy_addr++, &extheader);
+				if(ret != HAL_OK)
+					return -1;
+			}else{
+				ret = hal_efuse_read(EFUSE_CTRL_SETTING, phy_addr++, &extheader, LDO_OUT_DEFAULT_VOLT);
+				if(ret != _TRUE)
+					return -1;
+			}
 #endif
             if (((extheader & 0x0F) == 0x0F)) {/* not written */
                 continue;
@@ -137,15 +135,15 @@ int efuse_logical_read(u16 laddr, u16 size, u8 *pbuf)
                     ret = _TRUE;
                     data = efuse_sim_map[phy_addr++];
 #else
-				#ifdef EFUSE_LS
-					ret = hal_icc_ls_efuse_read(phy_addr++, &data);
-					if(ret != HAL_OK)
-                        return -1;
-				#else
-                    ret = hal_efuse_read(EFUSE_CTRL_SETTING, phy_addr++, &data, LDO_OUT_DEFAULT_VOLT);
-					if(ret != _TRUE)
-                        return -1;
-				#endif
+					if(is_lp){
+						ret = hal_icc_ls_efuse_read(phy_addr++, &data);
+						if(ret != HAL_OK)
+							return -1;
+					}else{
+						ret = hal_efuse_read(EFUSE_CTRL_SETTING, phy_addr++, &data, LDO_OUT_DEFAULT_VOLT);
+						if(ret != _TRUE)
+							return -1;
+					}
 #endif
                     if(addr >= laddr && addr < (laddr+size))
                         pbuf[addr-laddr] = data;
@@ -153,15 +151,15 @@ int efuse_logical_read(u16 laddr, u16 size, u8 *pbuf)
                     ret = _TRUE;
                     data = efuse_sim_map[phy_addr++];
 #else
-				#ifdef EFUSE_LS
-					ret = hal_icc_ls_efuse_read(phy_addr++, &data);
-					 if(ret != HAL_OK)
-                        return -1;
-				#else
-                    ret = hal_efuse_read(EFUSE_CTRL_SETTING, phy_addr++, &data, LDO_OUT_DEFAULT_VOLT);
-					 if(ret != _TRUE)
-                        return -1;
-				#endif
+					if(is_lp){
+						ret = hal_icc_ls_efuse_read(phy_addr++, &data);
+						 if(ret != HAL_OK)
+							return -1;
+					}else{
+						ret = hal_efuse_read(EFUSE_CTRL_SETTING, phy_addr++, &data, LDO_OUT_DEFAULT_VOLT);
+						 if(ret != _TRUE)
+							return -1;
+					}
 #endif
                     if((addr+1) >= laddr && (addr+1) < (laddr+size))
                         pbuf[addr+1-laddr] = data;
@@ -182,7 +180,7 @@ int efuse_logical_read(u16 laddr, u16 size, u8 *pbuf)
     return phy_addr-1;
 }
 
-static int efuse_pg_packet(u8 offset , u8 wden, u8 *data)
+static int efuse_logical_map_pg(u8 offset , u8 wden, u8 *data, u8 is_lp)
 {
     u16 idx = 2;//the first two addresses are reserved
     u8 temp0, temp1, WordEn;//, Addr;
@@ -207,15 +205,15 @@ static int efuse_pg_packet(u8 offset , u8 wden, u8 *data)
         ret = _TRUE;
         temp0 = efuse_sim_map[idx];
 #else
-	#ifdef EFUSE_LS
-		ret = hal_icc_ls_efuse_read(idx, &temp0);
-		if(ret != HAL_OK)
-            return -1;
-	#else
-        ret = hal_efuse_read(EFUSE_CTRL_SETTING, idx, &temp0, LDO_OUT_DEFAULT_VOLT);
-        if(ret != _TRUE)
-            return -1;
-	#endif
+		if(is_lp){
+			ret = hal_icc_ls_efuse_read(idx, &temp0);
+			if(ret != HAL_OK)
+				return -1;
+		}else{
+        	ret = hal_efuse_read(EFUSE_CTRL_SETTING, idx, &temp0, LDO_OUT_DEFAULT_VOLT);
+        	if(ret != _TRUE)
+	            return -1;
+		}
 #endif
         if (temp0 != 0xff) {//used
 
@@ -226,15 +224,15 @@ static int efuse_pg_packet(u8 offset , u8 wden, u8 *data)
                 ret = _TRUE;
                 temp1 = efuse_sim_map[idx];
 #else
-			#ifdef EFUSE_LS
-				ret = hal_icc_ls_efuse_read(idx, &temp1);
-				if(ret != HAL_OK)
-                    return -1;
-			#else
-                ret = hal_efuse_read(EFUSE_CTRL_SETTING, idx, &temp1, LDO_OUT_DEFAULT_VOLT);
-                if(ret != _TRUE)
-                    return -1;
-			#endif
+				if(is_lp){
+					ret = hal_icc_ls_efuse_read(idx, &temp1);
+					if(ret != HAL_OK)
+                    	return -1;
+				}else{
+					ret = hal_efuse_read(EFUSE_CTRL_SETTING, idx, &temp1, LDO_OUT_DEFAULT_VOLT);
+					if(ret != _TRUE)
+						return -1;
+				}
 #endif
                 //Addr = (((temp1&0xf0)|((temp0)>>4))>>1);//logical addr
                 WordEn = ((~temp1)&0x0f);//~ write enbale
@@ -277,30 +275,30 @@ static int efuse_pg_packet(u8 offset , u8 wden, u8 *data)
             ret = _TRUE;
             efuse_sim_map[idx] = (((offset<<5)|0x0f));
 #else
-		#ifdef EFUSE_LS
-			ret = hal_icc_ls_efuse_write(idx, (((offset<<5)|0x0f)));
-			if(ret != HAL_OK)
-				return -1;
-		#else
-            ret = hal_efuse_write(EFUSE_CTRL_SETTING, idx, (((offset<<5)|0x0f)), LDO_OUT_DEFAULT_VOLT);//addr[2:0]
-            if (ret != _TRUE)
-                return -1;
-		#endif
+			if(is_lp){
+				ret = hal_icc_ls_efuse_write(idx, (((offset<<5)|0x0f)));
+				if(ret != HAL_OK)
+					return -1;
+			}else{
+				ret = hal_efuse_write(EFUSE_CTRL_SETTING, idx, (((offset<<5)|0x0f)), LDO_OUT_DEFAULT_VOLT);//addr[2:0]
+				if (ret != _TRUE)
+					return -1;
+			}
 #endif
             idx++;
 #ifdef EFUSE_LOGICAL_SIM
             ret = _TRUE;
             efuse_sim_map[idx] = (((offset<<1)&0xf0)|wden);
 #else
-		#ifdef EFUSE_LS
-			ret = hal_icc_ls_efuse_write(idx, (((offset<<1)&0xf0)|wden));
-			if (ret != HAL_OK)
-                return -1;
-		#else
-            ret = hal_efuse_write(EFUSE_CTRL_SETTING, idx, (((offset<<1)&0xf0)|wden), LDO_OUT_DEFAULT_VOLT);//addr[6:3]
-            if (ret != _TRUE)
-                return -1;
-		#endif
+			if(is_lp){
+				ret = hal_icc_ls_efuse_write(idx, (((offset<<1)&0xf0)|wden));
+				if (ret != HAL_OK)
+                	return -1;
+			}else{
+            	ret = hal_efuse_write(EFUSE_CTRL_SETTING, idx, (((offset<<1)&0xf0)|wden), LDO_OUT_DEFAULT_VOLT);//addr[6:3]
+            	if (ret != _TRUE)
+                	return -1;
+			}
 #endif
             idx++;
         }else{
@@ -308,15 +306,15 @@ static int efuse_pg_packet(u8 offset , u8 wden, u8 *data)
             ret = _TRUE;
             efuse_sim_map[idx] = (((offset<<4)&0xf0)|wden);
 #else
-		#ifdef EFUSE_LS
-			ret = hal_icc_ls_efuse_write(idx, (((offset<<4)&0xf0)|wden));
-			if (ret != HAL_OK)
-                return -1;
-		#else
-            ret = hal_efuse_write(EFUSE_CTRL_SETTING, idx, (((offset<<4)&0xf0)|wden), LDO_OUT_DEFAULT_VOLT);
-            if (ret != _TRUE)
-                return -1;
-		#endif
+			if(is_lp){
+				ret = hal_icc_ls_efuse_write(idx, (((offset<<4)&0xf0)|wden));
+				if (ret != HAL_OK)
+                	return -1;
+			}else{
+            	ret = hal_efuse_write(EFUSE_CTRL_SETTING, idx, (((offset<<4)&0xf0)|wden), LDO_OUT_DEFAULT_VOLT);
+            	if (ret != _TRUE)
+                	return -1;
+			}
 #endif
             idx++;
         }
@@ -326,30 +324,30 @@ static int efuse_pg_packet(u8 offset , u8 wden, u8 *data)
                 ret = _TRUE;
                 efuse_sim_map[idx] = *(data+word_idx*2);
 #else
-			#ifdef EFUSE_LS
-				ret = hal_icc_ls_efuse_write(idx, *(data+word_idx*2));
-				if (ret != HAL_OK)
-                    return -1;
-			#else
-                ret = hal_efuse_write(EFUSE_CTRL_SETTING, idx, *(data+word_idx*2), LDO_OUT_DEFAULT_VOLT);
-                if (ret != _TRUE)
-                    return -1;
-			#endif
+				if(is_lp){
+					ret = hal_icc_ls_efuse_write(idx, *(data+word_idx*2));
+					if (ret != HAL_OK)
+						return -1;
+				}else{
+					ret = hal_efuse_write(EFUSE_CTRL_SETTING, idx, *(data+word_idx*2), LDO_OUT_DEFAULT_VOLT);
+					if (ret != _TRUE)
+						return -1;
+				}
 #endif
                 idx++;
 #ifdef EFUSE_LOGICAL_SIM
                 ret = _TRUE;
                 efuse_sim_map[idx] = *(data+word_idx*2+1);
 #else
-			#ifdef EFUSE_LS
-				ret = hal_icc_ls_efuse_write(idx, *(data+word_idx*2+1));
-				if (ret != HAL_OK)
-                    return -1;
-			#else
-                ret = hal_efuse_write(EFUSE_CTRL_SETTING, idx,  *(data+word_idx*2+1), LDO_OUT_DEFAULT_VOLT);
-                if (ret != _TRUE)
-                    return -1;
-			#endif
+				if(is_lp){
+					ret = hal_icc_ls_efuse_write(idx, *(data+word_idx*2+1));
+					if (ret != HAL_OK)
+						return -1;
+				}else{
+					ret = hal_efuse_write(EFUSE_CTRL_SETTING, idx,  *(data+word_idx*2+1), LDO_OUT_DEFAULT_VOLT);
+					if (ret != _TRUE)
+						return -1;
+				}
 #endif
                 idx++;
             }
@@ -361,7 +359,7 @@ static int efuse_pg_packet(u8 offset , u8 wden, u8 *data)
     return 0;
 }
 
-int efuse_logical_write(u16 addr, u16 cnts, u8 *data)
+static int efuse_logical_map_write(u16 addr, u16 cnts, u8 *data, u8 is_lp)
 {
     u8	offset, word_en;
     u8	map[EFUSE_LOGICAL_MAP_SIZE];
@@ -373,7 +371,7 @@ int efuse_logical_write(u16 addr, u16 cnts, u8 *data)
     if ((addr + cnts) > mapLen)
         return -1;
 
-    used_bytes = efuse_logical_read(0, mapLen, map);
+    used_bytes = efuse_logical_map_read(0, mapLen, map, is_lp);
     if (used_bytes < 0)
         return -1;
 
@@ -419,7 +417,7 @@ int efuse_logical_write(u16 addr, u16 cnts, u8 *data)
         }
 
         if (word_en != 0xF) {
-            ret = efuse_pg_packet(offset, word_en, newdata);
+            ret = efuse_logical_map_pg(offset, word_en, newdata, is_lp);
             /*
             dbg_printf("offset=%x \n",offset);
             dbg_printf("word_en=%x \n",word_en);
@@ -458,13 +456,66 @@ int efuse_logical_write(u16 addr, u16 cnts, u8 *data)
     return 0;
 }
 
+int efuse_logical_read(u16 laddr, u16 size, u8 *pbuf)
+{
+	return(efuse_logical_map_read(laddr, size, pbuf, 0));
+}
+
+int efuse_logical_write(u16 addr, u16 cnts, u8 *data)
+{
+	return(efuse_logical_map_write(addr, cnts, data, 0));
+}
+
 int efuse_lp_logical_read(u16 laddr, u16 size, u8 *pbuf)
 {
-	return(efuse_logical_read(laddr, size, pbuf));
+	return(efuse_logical_map_read(laddr, size, pbuf, 1));
 }
 
 int efuse_lp_logical_write(u16 addr, u16 cnts, u8 *data)
 {
-	return(efuse_logical_write(addr, cnts, data));
+	return(efuse_logical_map_write(addr, cnts, data, 1));
 }
+
+int efuse_fw_verify_enable(void)
+{
+	int ret;
+	uint8_t sb_lock[2];
+	sb_lock[0]= *(uint8_t *)BootCfg1Reg;
+	sb_lock[1]= *(uint8_t *)BootCfg2Reg;
+
+	// if logical eFuse 0x19[7] = 1 -> non-encrypted fw won't be allowed to boot
+	if(BootCfg2Reg->bit.secure_lock == 1)
+		return 0;
+	sb_lock[1] |= BIT7;
+
+	ret = efuse_logical_write(EFUSE_LOGICAL_SBLOCK_OFFSET - 1, 2, sb_lock); //write one word in 0x18 & 0x19 two bytes
+
+	if (ret >= 0) {
+		dbg_printf("Secure boot is enabled!!\r\n");
+		return (0);
+	} else {
+		return (-1);
+	}
+}
+
+int efuse_fw_verify_check(void)
+{
+	int ret;
+	uint8_t sb_lock = 0xFF;
+
+	if (BootCfg2Reg->bit.secure_lock == 1) {
+		return 1;
+	}
+
+	ret = efuse_logical_read(EFUSE_LOGICAL_SBLOCK_OFFSET, 1, &sb_lock);
+
+	if (sb_lock != 0xFF) {
+		if ((ret >= 0) && (sb_lock & BIT7)) {
+			return 1;
+		}
+	}
+
+	return 0;
+}
+
 #endif

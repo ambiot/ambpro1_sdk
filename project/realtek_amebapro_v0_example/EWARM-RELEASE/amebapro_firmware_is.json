@@ -106,7 +106,9 @@
 		"list" : ["xip"],
 		"xip": {
 			"secthdr":{
-				"type": "XIP"
+				"type": "XIP",
+				"xip_key": "A0D6DAE7E062CA94CBB294BF896B9F68",
+				"xip_iv": "94879487948794879487948794879487"
 			},
 			"__comment_option":"TODO: not ready",
 			"option": null,

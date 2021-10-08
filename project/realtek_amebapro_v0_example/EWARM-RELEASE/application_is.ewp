@@ -4944,6 +4944,9 @@
                 <name>$PROJ_DIR$\..\..\..\component\common\example\example_entry.c</name>
             </file>
             <file>
+                <name>$PROJ_DIR$\..\..\..\component\common\example\secure_boot\example_secure_boot.c</name>
+            </file>
+            <file>
                 <name>$PROJ_DIR$\..\..\..\component\common\example\wlan_fast_connect\example_wlan_fast_connect.c</name>
             </file>
         </group>

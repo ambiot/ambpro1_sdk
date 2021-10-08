@@ -621,6 +621,7 @@ SRC_C += ../../../lib_amazon/amazon-kinesis-video-streams-producer-embedded-c/sa
 SRC_C += ../../../lib_amazon/amazon-kinesis-video-streams-producer-embedded-c/samples/kvs-amebapro/example_kvs_producer.c
 SRC_C += ../../../lib_amazon/amazon-freertos-202012.00/vendors/realtek/boards/amebaPro/aws_demos/application_code/aws_main.c
 SRC_C += ../../../component/common/example/amazon_freertos/example_amazon_freertos.c
+SRC_C += ../../../component/common/example/secure_boot/example_secure_boot.c
 
 ##amazon_freertos_LTS - demos
 #common

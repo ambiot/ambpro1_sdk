@@ -187,6 +187,13 @@ int efuse_sec_key_write(u8 *buf);
   * @retval -1: Failure
   */
 int efuse_susec_key_write(u8 *buf);
+
+/**
+  * @brief  Write super secure key read/write lock
+  * @retval 0: Success
+  * @retval -1: Failure
+  */
+int efuse_lock_susec_key(void);
 ///@}
 #endif  // end of "#if defined(CONFIG_PLATFORM_8195BHP)"
 

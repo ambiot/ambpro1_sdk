@@ -329,6 +329,10 @@
 #include <amazon_afqp_tests/example_amazon_afqp_tests.h>
 #endif
 
+#if CONFIG_EXAMPLE_SECURE_BOOT
+#include <secure_boot/example_secure_boot.h>
+#endif
+
 /*
 	Preprocessor of example
 */
@@ -726,6 +730,10 @@ example_hilink();
         example_duer();
 #endif
 
+#if defined(CONFIG_EXAMPLE_SECURE_BOOT) && (CONFIG_EXAMPLE_SECURE_BOOT == 1)
+	example_secure_boot();
+#endif
+
 #if CONFIG_BT_PERIPHERAL
 	bt_example_init();
 #endif
@@ -773,6 +781,8 @@ example_hilink();
 #if (CONFIG_EXAMPLE_AMAZON_AFQP_TESTS)
 	example_amazon_afqp_tests();
 #endif
+
+
         
 }
 

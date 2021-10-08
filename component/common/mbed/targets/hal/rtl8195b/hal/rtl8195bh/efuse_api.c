@@ -32,6 +32,8 @@
 
 #if CONFIG_EFUSE_EN
 
+#define EFUSE_SSLOCK_OFFSET     0x1B0
+
 int efuse_get_remaining_length(void)
 {
     //not support
@@ -96,6 +98,27 @@ int efuse_susec_key_write(u8 *buf)
 
     return 0;
 }
+
+int efuse_lock_susec_key(void) {    
+    uint32_t ret = _FALSE;
+    uint8_t ss_lock;
+    
+    ret = hal_efuse_read (0x37F00000, EFUSE_SSLOCK_OFFSET, &ss_lock, 7);
+    if (ret == _TRUE) {
+        // if eFuse 0x1b0[0] = 0 -> lock SSE
+        ss_lock &= ~0x01;
+        ret = hal_efuse_write (0x37F00000, EFUSE_SSLOCK_OFFSET, ss_lock, 7);
+        if (ret == _TRUE) {
+            dbg_printf("eFuse Key Locked!!, Super-Secure Key Reading is Inhibited!!\r\n");
+            return (0);
+        } else {
+            return (-1);
+        }
+    } else {
+        return (-1);
+    }
+}
+
 #endif // #if !defined(CONFIG_BUILD_NONSECURE)
 
 #if defined(CONFIG_BUILD_NONSECURE)

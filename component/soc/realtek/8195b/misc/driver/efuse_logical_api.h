@@ -42,17 +42,26 @@ extern "C" {
  */
 
 /**
-  * @brief  write in pg packet format 
-  * @param  offset: offset is to set the number of 8 bytes
-  * @param  wden: word enable is to decide which word need to be written
-  * @param  data: data need to be written
-  * @retval 0: success -1: failure 
+  * @brief  Read efuse content on logical map of HS
+  * @param  laddr: address on logical map of HS
+  * @param  size: size of wanted data
+  * @param  pbuf: buffer of read data
+  * @retval : return number of used bytes
   */
-static int efuse_pg_packet(u8 offset , u8 wden, u8 *data);
+int efuse_logical_read(u16 laddr, u16 size, u8 *pbuf);
 
 /**
-  * @brief  Read efuse content on logical map
-  * @param  laddr: address on logical map
+  * @brief  Write user's content to efuse on logical map of HS
+  * @param  addr: address on logical map of HS
+  * @param  cnts: how many bytes of data
+  * @param  data: data need to be written
+  * @retval 0: success <0: failure   
+  */
+int efuse_logical_write(u16 addr, u16 cnts, u8 *data);
+
+/**
+  * @brief  Read efuse content on logical map of LP
+  * @param  laddr: address on logical map of LP
   * @param  size: size of wanted data
   * @param  pbuf: buffer of read data
   * @retval : return number of used bytes
@@ -60,13 +69,25 @@ static int efuse_pg_packet(u8 offset , u8 wden, u8 *data);
 int efuse_lp_logical_read(u16 laddr, u16 size, u8 *pbuf);
 
 /**
-  * @brief  Write user's content to efuse on logical map
-  * @param  addr: address on logical map
+  * @brief  Write user's content to efuse on logical map of LP
+  * @param  addr: address on logical map of LP
   * @param  cnts: how many bytes of data
   * @param  data: data need to be written
   * @retval 0: success <0: failure   
   */
 int efuse_lp_logical_write(u16 addr, u16 cnts, u8 *data);
+
+/**
+  * @brief  To enable secure boot
+  * @retval 0: success <0: failure 
+  */
+int efuse_fw_verify_enable(void);
+
+/**
+  * @brief  To check the secure boot is enabled or not
+  * @retval 1: success 0: failure 
+  */
+int efuse_fw_verify_check(void);
 
 #ifdef __cplusplus
 }

@@ -546,6 +546,9 @@ in lwip_opt.h for support uart adapter*/
 /* For ssl server example */
 #define CONFIG_EXAMPLE_SSL_SERVER		0
 
+/*For secure boot example */
+#define CONFIG_EXAMPLE_SECURE_BOOT 0
+
 /*For timelapse example */
 #define CONFIG_EXAMPLE_TIMELAPSE 0
 
