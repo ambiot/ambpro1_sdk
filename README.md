@@ -1,8 +1,29 @@
-﻿# AmebaPro with KVS WebRTC and Producer
-This project is going to demonstrate how to use KVS Producer and WebRTC on AmebaPro
+﻿# AmebaPro Introduction 
+
+AmebaPro is one of the Ameba IoT Family System On Chip which integrates the following features 
+
+<ul class="simple">
+<li><p>Wi-Fi 802.11ac/n</p></li>
+<li><p>H.264</p></li>
+<li><p>Image Signal Processing/ISP</p></li>
+<li><p>Audio Codec</p></li>
+<li><p>SD Storage</p></li>
+</ul>
+
+AmebaPro is based on the ARM cortex v8m up to 300MHz with 32/64MB LPDDR. The high performance capability enables the comparatively complicated video and vision application, while still be a best choice for battery-based product. The highly integrated solution makes it possible to have a smaller form factor design, which is more cost effective and has rich potentiality.
+
+It has FreeRTOS running on it, and provides standard BSD socket and Posix interface for easier open sources integration. The simplicity of RTOS architecture achieves fast boot capability, which is a big benefit from both key product feature, and power consumption point of view.
+
+By integration of image sensing and communication technology, AmebaPro transmits the video or picture to the cloud, which then bridges the back-end AI service for computer vision application. It realizes a lightweight IoT device to have intelligent vision capability.
+
+
+# AmebaPro with KVS WebRTC and Producer
+This demonstrates how to use KVS Producer and WebRTC on AmebaPro.
 <a href="https://www.amebaiot.com/zh/amebapro/">
   <img src="https://img.shields.io/badge/Realtek%20IoT-AmebaPro-blue" valign="middle" alt="test image size" height="15%" width="15%"/>
 </a>  
+
+![AmebaPro_RTOS_Amazon_Eco_System](https://user-images.githubusercontent.com/63438091/134361259-9d845184-8b54-4c79-a087-0b3447aa9e42.jpg)
 
 Amazon FreeRTOS-LTS libraries are supported on AmebaPro now, it can be used to communicate with AWS IoT core easily!
 [Version 202012.00](https://github.com/aws/amazon-freertos/tree/202012.00)
